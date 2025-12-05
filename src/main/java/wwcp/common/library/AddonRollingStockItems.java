@@ -9,7 +9,7 @@ import train.common.library.TypeOfRollingStock;
  */
 public enum AddonRollingStockItems
 {
-    //minecraftTemplate("template-icon", STEAM, 100),
+    WWCPShopShunter("template-icon", train.common.library.TypeOfRollingStock.DIESEL),
     //minecraftTemplateUntradeable("template-icon", STEAM)
     ;
 
