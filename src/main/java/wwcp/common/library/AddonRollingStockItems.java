@@ -10,7 +10,8 @@ import train.common.library.TypeOfRollingStock;
 public enum AddonRollingStockItems
 {
     WWCPShopShunter("template-icon", train.common.library.TypeOfRollingStock.DIESEL, "WWCP"),
-    SD90MACH("template-icon", train.common.library.TypeOfRollingStock.DIESEL, "American")
+    SD90MACH("template-icon", train.common.library.TypeOfRollingStock.DIESEL, "American"),
+    Eurofima1stClassOpen("item.compartmentEurofima", train.common.library.TypeOfRollingStock.PASSENGER,"European")
     //minecraftTemplateUntradeable("template-icon", STEAM)
     ;
 

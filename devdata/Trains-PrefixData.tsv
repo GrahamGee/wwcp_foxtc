@@ -288,6 +288,7 @@ item.tc:minecartCaboose3	Caboose Black	train.common.entity.rollingStock.workcart
 item.tc:minecartCabooseLogging	Caboose Logging	train.common.entity.rollingStock.workcart.EntityCabooseLogging	cabLogging_
 item.tc:minecartCabooseLoggingPRR	PRR Caboose Logging	train.common.entity.rollingStock.workcart.EntityCabooseLoggingPRR	PRRCaboose_
 item.tc:minecartCabooseWork	Work Caboose	train.common.entity.rollingStock.workcart.EntityCabooseWorkCart	workcaboose
+item.wwcp:Eurofima1stClassOpen	Eurofima1stClassOpen	wwcp.common.entity.passenger.EntityEurofima1stClass	Eurofima1stClass
 item.tc:minecartFlatCartLogs_DB	Freight Flat Cart Logs DB	train.common.entity.rollingStock.freight.EntityFlatCarLogs_DB	flatCarLogs_DB_
 item.tc:minecartFlatCartRail_DB	Freight Flat Cart Rails DB	train.common.entity.rollingStock.freight.EntityFlatCarRails_DB	flatCarRails_DB_
 item.tc:minecartFlatCart_DB	Flat Cart DB	train.common.entity.rollingStock.freight.EntityFlatCar_DB	flatCar_DB_

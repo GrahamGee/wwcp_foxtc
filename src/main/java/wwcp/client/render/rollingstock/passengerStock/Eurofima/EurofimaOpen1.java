@@ -9,8 +9,15 @@
 
 package wwcp.client.render.rollingstock.passengerStock.Eurofima; //Path where the model is located
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
 import tmt.ModelConverter;
 import tmt.ModelRendererTurbo;
+import tmt.Tessellator;
+import wwcp.client.render.rollingstock.bogies.AmericanTrucks.MacBogieBack;
+import wwcp.client.render.rollingstock.bogies.EUBogies.EurofimaBogie;
+import wwcp.common.library.Info;
 
 public class EurofimaOpen1 extends ModelConverter //Same as Filename
 {
@@ -3088,5 +3095,21 @@ public class EurofimaOpen1 extends ModelConverter //Same as Filename
 
 		bodyModel[762].addShapeBox(0F, 0F, 0F, 81, 1, 7, 0F,-0.5F, -0.25F, 0F, -0.5F, -0.25F, 0F, -0.5F, 0.25F, -4F, -0.5F, 0.25F, -4F, -0.5F, -0.25F, 0F, -0.5F, -0.25F, 0F, -0.5F, -0.75F, -4F, -0.5F, -0.75F, -4F); // Box 818
 		bodyModel[762].setRotationPoint(0F, -14F, -10F);
+	}
+
+	EurofimaBogie bogie = new EurofimaBogie();
+
+	@Override
+	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+		super.render(entity, f, f1, f2, f3, f4, f5);
+		Tessellator.bindTexture(new ResourceLocation(Info.modID, "textures/bogies/Eurofimabogie.png"));
+		GL11.glPushMatrix();
+		GL11.glTranslatef(2.9f,0,0);
+		bogie.render(entity, f, f1, f2, f3, f4, f5);
+		GL11.glPopMatrix();
+		GL11.glPushMatrix();
+		GL11.glTranslatef(-3.6f,0,0);
+		bogie.render(entity, f, f1, f2, f3, f4, f5);
+		GL11.glPopMatrix();
 	}
 }

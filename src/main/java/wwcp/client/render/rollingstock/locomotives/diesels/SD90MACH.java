@@ -35,6 +35,12 @@ public class SD90MACH extends FVTMFormatBase {
 		initGroup_SD90MACHcb();
 		initGroup_AC4400CWcb();
 		initGroup_SD90MACH_Oldcb();
+
+		for (TurboList l : groups) {
+			ModelRendererTurbo[] arr = new ModelRendererTurbo[l.size()];
+			l.toArray(arr);
+			fixRotation(arr, false, true, true);
+		}
 	}
 
 	private final void initGroup_group0(){
