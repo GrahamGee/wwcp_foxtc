@@ -12,7 +12,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import train.common.core.handlers.RecipeHandler;
 import train.common.core.managers.TierRecipeManager;
-import wwcp.common.core.handler.AddonPackRollingStockEntityHandler;
+import wwcp.common.core.handler.WWCPEntityHandler;
 import wwcp.common.creativetabs.CreativeTabAmerican;
 import wwcp.common.creativetabs.CreativeTabEuropean;
 import wwcp.common.creativetabs.CreativeTabWWCP;
@@ -42,7 +42,7 @@ public class wwcp
         WWCP = new CreativeTabWWCP(CreativeTabs.getNextID(), "WWCP Special", Items.diamond_boots);
 
         AddonPackItems addonPackItems = new AddonPackItems();
-        AddonPackRollingStockEntityHandler entityHandler = new AddonPackRollingStockEntityHandler();
+        WWCPEntityHandler entityHandler = new WWCPEntityHandler();
     }
 
     @EventHandler

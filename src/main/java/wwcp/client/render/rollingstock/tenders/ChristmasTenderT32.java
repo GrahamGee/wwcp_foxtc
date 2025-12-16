@@ -9,9 +9,17 @@
 
 package wwcp.client.render.rollingstock.tenders; //Path where the model is located
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
 import tmt.ModelConverter;
 import tmt.ModelRendererTurbo;
+import tmt.Tessellator;
+import train.client.renderhelper.ModelRenderHelper;
 import train.common.enums.BoxName;
+import wwcp.client.render.rollingstock.bogies.GermanBRBogies.BR01BackBogie;
+import wwcp.client.render.rollingstock.bogies.TenderBogies.Tender32Bogie;
+import wwcp.common.library.Info;
 
 public class ChristmasTenderT32 extends ModelConverter //Same as Filename
 {
@@ -100,26 +108,26 @@ public class ChristmasTenderT32 extends ModelConverter //Same as Filename
 		bodyModel[67] = new ModelRendererTurbo(this, 17, 9, textureX, textureY); // Box 90
 		bodyModel[68] = new ModelRendererTurbo(this, 97, 49, textureX, textureY); // Box 132
 		bodyModel[69] = new ModelRendererTurbo(this, 65, 41, textureX, textureY); // Box 50
-		bodyModel[70] = new ModelRendererTurbo(this, 10, 127, textureX, textureY); // Box 70
-		bodyModel[71] = new ModelRendererTurbo(this, 10, 107, textureX, textureY); // Box 72
-		bodyModel[72] = new ModelRendererTurbo(this, 10, 84, textureX, textureY); // Box 73
-		bodyModel[73] = new ModelRendererTurbo(this, 10, 151, textureX, textureY); // Box 75
-		bodyModel[74] = new ModelRendererTurbo(this, 10, 107, textureX, textureY); // Box 76
-		bodyModel[75] = new ModelRendererTurbo(this, 10, 84, textureX, textureY); // Box 77
-		bodyModel[76] = new ModelRendererTurbo(this, 10, 151, textureX, textureY); // Box 79
-		bodyModel[77] = new ModelRendererTurbo(this, 10, 151, textureX, textureY); // Box 80
-		bodyModel[78] = new ModelRendererTurbo(this, 10, 151, textureX, textureY); // Box 81
-		bodyModel[79] = new ModelRendererTurbo(this, 10, 127, textureX, textureY); // Box 82
-		bodyModel[80] = new ModelRendererTurbo(this, 10, 127, textureX, textureY); // Box 83
-		bodyModel[81] = new ModelRendererTurbo(this, 10, 127, textureX, textureY); // Box 84
-		bodyModel[82] = new ModelRendererTurbo(this, 10, 151, textureX, textureY); // Box 85
-		bodyModel[83] = new ModelRendererTurbo(this, 10, 127, textureX, textureY); // Box 86
-		bodyModel[84] = new ModelRendererTurbo(this, 10, 151, textureX, textureY); // Box 87
-		bodyModel[85] = new ModelRendererTurbo(this, 10, 151, textureX, textureY); // Box 88
-		bodyModel[86] = new ModelRendererTurbo(this, 10, 127, textureX, textureY); // Box 89
-		bodyModel[87] = new ModelRendererTurbo(this, 10, 127, textureX, textureY); // Box 90
-		bodyModel[88] = new ModelRendererTurbo(this, 10, 127, textureX, textureY); // Box 91
-		bodyModel[89] = new ModelRendererTurbo(this, 10, 151, textureX, textureY); // Box 92
+		bodyModel[70] = new ModelRendererTurbo(this, 10, 127, textureX, textureY,"lamp"); // Box 70
+		bodyModel[71] = new ModelRendererTurbo(this, 10, 107, textureX, textureY,"lamp"); // Box 72
+		bodyModel[72] = new ModelRendererTurbo(this, 10, 84, textureX, textureY,"lamp"); // Box 73
+		bodyModel[73] = new ModelRendererTurbo(this, 10, 151, textureX, textureY,"lamp"); // Box 75
+		bodyModel[74] = new ModelRendererTurbo(this, 10, 107, textureX, textureY, "lamp"); // Box 76
+		bodyModel[75] = new ModelRendererTurbo(this, 10, 84, textureX, textureY, "lamp"); // Box 77
+		bodyModel[76] = new ModelRendererTurbo(this, 10, 151, textureX, textureY,"lamp"); // Box 79
+		bodyModel[77] = new ModelRendererTurbo(this, 10, 151, textureX, textureY,"lamp"); // Box 80
+		bodyModel[78] = new ModelRendererTurbo(this, 10, 151, textureX, textureY,"lamp"); // Box 81
+		bodyModel[79] = new ModelRendererTurbo(this, 10, 127, textureX, textureY,"lamp"); // Box 82
+		bodyModel[80] = new ModelRendererTurbo(this, 10, 127, textureX, textureY,"lamp"); // Box 83
+		bodyModel[81] = new ModelRendererTurbo(this, 10, 127, textureX, textureY,"lamp"); // Box 84
+		bodyModel[82] = new ModelRendererTurbo(this, 10, 151, textureX, textureY,"lamp"); // Box 85
+		bodyModel[83] = new ModelRendererTurbo(this, 10, 127, textureX, textureY,"lamp"); // Box 86
+		bodyModel[84] = new ModelRendererTurbo(this, 10, 151, textureX, textureY,"lamp"); // Box 87
+		bodyModel[85] = new ModelRendererTurbo(this, 10, 151, textureX, textureY,"lamp"); // Box 88
+		bodyModel[86] = new ModelRendererTurbo(this, 10, 127, textureX, textureY,"lamp"); // Box 89
+		bodyModel[87] = new ModelRendererTurbo(this, 10, 127, textureX, textureY,"lamp"); // Box 90
+		bodyModel[88] = new ModelRendererTurbo(this, 10, 127, textureX, textureY,"lamp"); // Box 91
+		bodyModel[89] = new ModelRendererTurbo(this, 10, 151, textureX, textureY,"lamp"); // Box 92
 
 		bodyModel[0].addShapeBox(0F, 0F, 0F, 55, 1, 22, 0F,0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F); // Box 87
 		bodyModel[0].setRotationPoint(-21F, 2F, -11F);
@@ -421,5 +429,23 @@ public class ChristmasTenderT32 extends ModelConverter //Same as Filename
 		bodyModel[89].addShapeBox(-8F, -7F, 0F, 21, 19, 1, 0F,-8F, -7F, 0F, -8F, -7F, 0F, -8F, -7F, 0F, -8F, -7F, 0F, -8F, -7F, 0F, -8F, -7F, 0F, -8F, -7F, 0F, -8F, -7F, 0F); // Box 92
 		bodyModel[89].setRotationPoint(18F, -3F, 10.05F);
 		bodyModel[89].rotateAngleZ = 0.40142573F;
+	}
+
+	Tender32Bogie bogie = new Tender32Bogie();
+
+	@Override
+	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+		super.render(entity, f, f1, f2, f3, f4, f5);
+
+		Tessellator.bindTexture(new ResourceLocation(Info.modID, "textures/bogies/EUBogies/germanTenderBogies/T32BogieBlack.png"));
+		GL11.glPushMatrix();
+		GL11.glTranslatef(1.07f,0f,0);
+		bogie.render(entity, f, f1, f2, f3, f4, f5);
+		GL11.glPopMatrix();
+
+		GL11.glPushMatrix();
+		GL11.glTranslatef(-0.63f,0f,0);
+		bogie.render(entity, f, f1, f2, f3, f4, f5);
+		GL11.glPopMatrix();
 	}
 }

@@ -5,18 +5,21 @@ import train.common.library.register.TrainRecord;
 import wwcp.common.entity.locomotives.diesels.EntitySD90MACH;
 import wwcp.common.entity.locomotives.diesels.EntityWWCPShopShunter;
 import wwcp.common.entity.locomotives.electrics.EntityBR103;
+import wwcp.common.entity.locomotives.steam.EntityChristmasBR01;
+import wwcp.common.entity.locomotives.tenders.EntityT32ChristmasTender;
+import wwcp.common.entity.passenger.Entity1stClassRheingoldChristmas;
 import wwcp.common.entity.passenger.EntityEurofima1stClass;
 import wwcp.common.library.WWCPItems;
 import wwcp.common.wwcp;
 
-public class AddonPackRollingStockEntityHandler
+public class WWCPEntityHandler
 {
     private Object Instance()
     {
         return wwcp.instance;
     }
 
-    public AddonPackRollingStockEntityHandler()
+    public WWCPEntityHandler()
     {
         /* Sample
 
@@ -31,6 +34,33 @@ public class AddonPackRollingStockEntityHandler
          */
 
         // Put Calls to RegisterRollingStockEntity below this.
+        /**
+         * STEAM LOCOMOTIVES
+         */
+
+        Traincraft.traincraftRegistry
+                .RegisterRollingStockEntity(WWCPItems.ChristmasBR01.item,
+                        new TrainRecord(WWCPItems.ChristmasBR01.name(), EntityChristmasBR01.class, WWCPItems.ChristmasBR01.item,
+                                Transport.DRBR01WitteChristmas().additionalText2, Transport.DRBR01WitteChristmas().weightinKGs,
+                                new String[] {"Yellow"}, 5, 0, 1.1, (int)Transport.DRBR01WitteChristmas().topSpeed,
+                                (int)Transport.DRBR01WitteChristmas().metric_horsepower, 40, 200,
+                                1.1, 6.2, 100000),
+                        Instance()
+                );
+        /**
+         * TENDERS
+         */
+
+        Traincraft.traincraftRegistry
+                .RegisterRollingStockEntity(WWCPItems.T32TenderChristmas.item,
+                        new TrainRecord(WWCPItems.T32TenderChristmas.name(), EntityT32ChristmasTender.class, WWCPItems.T32TenderChristmas.item,
+                                Transport.T32TenderChristmas().additionalText2, Transport.T32TenderChristmas().weightinKGs,
+                                new String[] {"Yellow"}, 5, 0, 0, 0,
+                                0, 0, 0,
+                                0, 0, 0),
+                        Instance()
+                );
+
         /**
          * DIESEL TRAINS
          */
@@ -80,5 +110,15 @@ public class AddonPackRollingStockEntityHandler
                             0, 0, 0),
                     Instance()
             );
+
+        Traincraft.traincraftRegistry
+                .RegisterRollingStockEntity(WWCPItems.RheingoldSalon1Christmas.item,
+                        new TrainRecord(WWCPItems.RheingoldSalon1Christmas.name(), Entity1stClassRheingoldChristmas.class, WWCPItems.RheingoldSalon1Christmas.item,
+                                Transport.RheingoldSalon1Christmas().additionalText2, Transport.RheingoldSalon1Christmas().weightinKGs,
+                                new String[] {"Yellow"}, 5, 0, 0, 0,
+                                0, 0, 0,
+                                0, 0, 0),
+                        Instance()
+                );
     }
 }

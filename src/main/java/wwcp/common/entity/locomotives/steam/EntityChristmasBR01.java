@@ -1,75 +1,79 @@
-package wwcp.common.entity.locomotives.electrics;
+package wwcp.common.entity.locomotives.steam;
 
 import net.minecraft.entity.item.EntityMinecart;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import train.client.render.register.TrainRenderRecord;
 import train.common.Traincraft;
-import train.common.api.ElectricTrain;
+import train.common.api.LiquidManager;
+import train.common.api.SteamTrain;
 import train.common.core.util.TraincraftUtil;
 import train.common.library.sounds.SoundRecord;
-import wwcp.client.render.rollingstock.locomotives.electrics.BR103;
+import wwcp.client.render.rollingstock.locomotives.steamers.GermanBR.BR01.ChristmasBR01;
 import wwcp.common.core.handler.Transport;
-import wwcp.common.entity.passenger.EntityEurofima1stClass;
 
-public class EntityBR103 extends ElectricTrain {
+import java.util.ArrayList;
 
-    public EntityBR103(World world) {
-        super(world);    
-        InsertTexture(0, "BR103");
+public class EntityChristmasBR01 extends SteamTrain {
+
+    public EntityChristmasBR01(World world) {
+        super(world,100000, LiquidManager.WATER_FILTER);
+        InsertTexture(0, "ChristmasBR01");
+
     }
-    
+
     public void updateRiderPosition() {
-        TraincraftUtil.updateRider(this, 7.8f, 0.2f, -0.15f);
+        TraincraftUtil.updateRider(this, -0.2f, 0.2f, -0.15f);
     }
 
     public float getOptimalDistance(EntityMinecart cart) {
-        return 0.95F;
+        return 0.75F;
     }
 
     @Override
     public String transportCountry() {
-        return Transport.BR103().country;
+        return Transport.DRBR01WitteChristmas().country;
     }
 
     @Override
     public String transportYear() {
-        return Transport.BR103().year;
+        return Transport.DRBR01WitteChristmas().year;
     }
 
     public String getInventoryName() {
-        return Transport.BR103().name;
+        return Transport.DRBR01WitteChristmas().name;
     }
 
     @Override
     public boolean isFictional() {
-        return Transport.BR103().fictional;
+        return Transport.DRBR01WitteChristmas().fictional;
     }
 
     @Override
     public void onRenderInsertRecord() {
         Traincraft.traincraftRegistry.RegisterRollingStockModel(
                 new TrainRenderRecord(wwcp.common.library.Info.modID,
-                        EntityBR103.class, new BR103(),
-                        "BR103",
-                        new float[]{-4f, 0.15F, 0.0F},
+                        EntityChristmasBR01.class, new ChristmasBR01(),
+                        "ChristmasBR01",
+                        new float[]{-3f, 0.15F, 0.0F},
                         new float[]{0F, 180F, 180F},
-                        null) {
+
+                        null, "largesmoke", new ArrayList<double[]>() { {
+                    add(new double[] { 5.5D, 1.7D, 0.0D }); }
+                },
+                        "explode", new ArrayList<double[]>() { {
+                    add(new double[] { 5.5D, -0.1875D, 0.6875D });
+                    }
+                },
+                        10, 2)
+
+                {
                     @Override
                     public ResourceLocation getTextureFile(String colorAsString) {
                         String texturePath = "";
                         switch (colorAsString.toLowerCase()) {
                             case "yellow":
-                                texturePath = "textures/locomotive/Electric/BR103/BR103Lufthansa";
-                                break;
-                            case "orange":
-                                texturePath = "textures/locomotive/Electric/BR103/BR103Base";
-                                break;
-                            case "blue":
-                                texturePath = "textures/locomotive/Electric/BR103/FullRed";
-                                break;
-                            case "red":
-                                texturePath = "textures/locomotive/Electric/BR103/FullRed1";
+                                texturePath = "textures/passengerstock/ChristmasStock/ChristmasBR01";
                                 break;
                         }
                         texturePath += ".png";

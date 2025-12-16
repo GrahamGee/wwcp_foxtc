@@ -279,6 +279,7 @@ item.tc:minecartTwoBil	TwoBil	com.jcirmodelsquad.tcjcir.vehicles.locomotives.ele
 item.tc:minecartW_A11	SEC W-A11	com.jcirmodelsquad.tcjcir.vehicles.locomotives.eletric.ElectricW_A11	W_A11_
 item.tc:minecartW_A55	SEC W-A55	com.jcirmodelsquad.tcjcir.vehicles.locomotives.eletric.ElectricW_A55	W_A55_
 item.tc:minecartW_A55_Combine	SEC W-A55 Combine	com.jcirmodelsquad.tcjcir.vehicles.locomotives.eletric.ElectricW_A55_Combine	W_A55_Combine_
+item.wwcp:RheingoldSalon1Christmas	RheingoldSalon1Christmas	wwcp.common.entity.passenger.Entity1stClassRheingoldChristmas	ChristmasSalon
 item.wwcp:BR103	BR103	wwcp.common.entity.locomotives.electrics.EntityBR103	BR103
 item.tc:minecartLocoDD35B	DD35 B Unit	train.common.entity.rollingStock.EntityBUnitDD35	dd35b_
 item.tc:minecartBoxCartPRR	Freight Box Cart PRR	train.common.entity.rollingStock.freight.EntityBoxCartPRR	PRR_X31a
@@ -289,6 +290,7 @@ item.tc:minecartCaboose3	Caboose Black	train.common.entity.rollingStock.workcart
 item.tc:minecartCabooseLogging	Caboose Logging	train.common.entity.rollingStock.workcart.EntityCabooseLogging	cabLogging_
 item.tc:minecartCabooseLoggingPRR	PRR Caboose Logging	train.common.entity.rollingStock.workcart.EntityCabooseLoggingPRR	PRRCaboose_
 item.tc:minecartCabooseWork	Work Caboose	train.common.entity.rollingStock.workcart.EntityCabooseWorkCart	workcaboose
+item.wwcp:ChristmasBR01	ChristmasBR01	wwcp.common.entity.locomotives.steam.EntityChristmasBR01	ChristmasBR01
 item.wwcp:Eurofima1stClassOpen	Eurofima1stClassOpen	wwcp.common.entity.passenger.EntityEurofima1stClass	Eurofima1stClass
 item.tc:minecartFlatCartLogs_DB	Freight Flat Cart Logs DB	train.common.entity.rollingStock.freight.EntityFlatCarLogs_DB	flatCarLogs_DB_
 item.tc:minecartFlatCartRail_DB	Freight Flat Cart Rails DB	train.common.entity.rollingStock.freight.EntityFlatCarRails_DB	flatCarRails_DB_
@@ -436,6 +438,7 @@ item.tc:minecartPropagandaUSSR	Propaganda USSR	train.common.entity.rollingStock.
 item.wwcp:SD90MACH	SD90MACH	wwcp.common.entity.locomotives.diesels.EntitySD90MACH	SD90MACH
 item.tc:minecartStockCar	Stock Cart	train.common.entity.rollingStock.EntityStockCar	stockcar_
 item.tc:minecartDRWGStockCar	DRWG Stock Cart	train.common.entity.rollingStock.EntityStockCarDRWG	drwgstockcar
+item.wwcp:T32TenderChristmas	T32TenderChristmas	wwcp.common.entity.locomotives.tenders.EntityT32ChristmasTender	ChristmasTenderT32
 item.tc:minecartWatertransp	Tank Lava	train.common.entity.rollingStock.tanker.EntityTankLava	lavacar_
 item.tc:minecartTankWagon	Tank Wagon Yellow	train.common.entity.rollingStock.tanker.EntityTankWagon	tankwagon
 item.tc:minecartTankWagon2	Tank Wagon Grey	train.common.entity.rollingStock.tanker.EntityTankWagon2	tankwagon2_
