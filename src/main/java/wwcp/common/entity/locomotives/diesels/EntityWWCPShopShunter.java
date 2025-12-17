@@ -9,6 +9,7 @@ import train.common.api.DieselTrain;
 import train.common.api.LiquidManager;
 import train.common.core.util.TraincraftUtil;
 import train.common.library.sounds.SoundRecord;
+import wwcp.client.render.rollingstock.WWCPFictional.WWCPShopShunter;
 import wwcp.client.render.rollingstock.locomotives.diesels.SD90MACH;
 
 public class EntityWWCPShopShunter extends DieselTrain
@@ -56,7 +57,7 @@ public class EntityWWCPShopShunter extends DieselTrain
     {
         Traincraft.traincraftRegistry.RegisterRollingStockModel(
                 new TrainRenderRecord(wwcp.common.library.Info.modID,
-                        EntityWWCPShopShunter.class, new SD90MACH(),
+                        EntityWWCPShopShunter.class, new WWCPShopShunter(),
                         "WWCPShopShunter",
                         new float[] { -1.25f,0.15F,0.0F },
                         new float[] { 0F, 180F, 180F },

@@ -8,6 +8,7 @@ import train.common.Traincraft;
 import train.common.api.LiquidManager;
 import train.common.api.SteamTrain;
 import train.common.core.util.TraincraftUtil;
+import train.common.library.EnumSounds;
 import train.common.library.sounds.SoundRecord;
 import wwcp.client.render.rollingstock.locomotives.steamers.GermanBR.BR01.ChristmasBR01;
 import wwcp.common.core.handler.Transport;
@@ -85,6 +86,6 @@ public class EntityChristmasBR01 extends SteamTrain {
 
     @Override
     public SoundRecord getSoundRecord() {
-        return null;
+        return EnumSounds.locoSteamBR01_DB;
     }
 }

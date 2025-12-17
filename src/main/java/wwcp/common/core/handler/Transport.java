@@ -22,7 +22,7 @@ public class Transport {
         public int rows;
         public float tractive_effort;
         public float metric_horsepower;
-        public float weightinKGs;
+        public double weightinKGs;
         public float topSpeed;
         public float backTopSpeed;
         public boolean fictional;
@@ -39,7 +39,7 @@ public class Transport {
             additionalTextTitle2 = AditionalText2Title;
             additionalText2 = AditionalText2;
             tractive_effort = TractiveEffort;
-            weightinKGs = (WeightinTons);
+            weightinKGs = (double)(WeightinTons)/10;
             topSpeed = TopSpeed;
             metric_horsepower = MetricHorsepower;
             backTopSpeed = BackTopSpeed;
@@ -66,7 +66,7 @@ public class Transport {
         public int rows;
         public float tractive_effort;
         public float metric_horsepower;
-        public float weightinKGs;
+        public double weightinKGs;
         public float topSpeed;
         public float backTopSpeed;
         public boolean fictional;
@@ -83,7 +83,7 @@ public class Transport {
             additionalTextTitle2 = AditionalText2Title;
             additionalText2 = AditionalText2;
             tractive_effort = TractiveEffort;
-            weightinKGs = (WeightinTons);
+            weightinKGs = (double)(WeightinTons)/10;
             topSpeed = TopSpeed;
             metric_horsepower = MetricHorsepower;
             backTopSpeed = TopSpeed;
@@ -107,7 +107,7 @@ public class Transport {
         public String additionalTextTitle2;
         public String additionalText2;
         public int rows;
-        public float weightinKGs;
+        public double weightinKGs;
         public float topSpeed;
         public float backTopSpeed;
         public boolean fictional;
@@ -122,7 +122,7 @@ public class Transport {
             additionalText = AditionalText;
             additionalTextTitle2 = AditionalText2Title;
             additionalText2 = AditionalText2;
-            weightinKGs = (WeightinTons);
+            weightinKGs = (double)(WeightinTons)/10;
             topSpeed = TopSpeed;
             fictional = Fictional;
             backTopSpeed = TopSpeed;
@@ -144,7 +144,7 @@ public class Transport {
         public String additionalText2;
         public int rows;
         public int tankcapacity;
-        public float weightinKGs;
+        public double weightinKGs;
         public float topSpeed;
         public float backTopSpeed;
         public boolean fictional;
@@ -159,7 +159,7 @@ public class Transport {
             additionalText = AditionalText;
             additionalTextTitle2 = AditionalText2Title;
             additionalText2 = AditionalText2;
-            weightinKGs = (WeightinTons * 100);
+            weightinKGs = (double)(WeightinTons)/10;
             topSpeed = TopSpeed;
             fictional = Fictional;
             backTopSpeed = TopSpeed;

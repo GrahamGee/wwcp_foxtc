@@ -16,8 +16,12 @@ public enum WWCPItems
     BR103("item.BR103", train.common.library.TypeOfRollingStock.ELECTRIC, "European"),
     ChristmasBR01("item.ChristmasBR01", train.common.library.TypeOfRollingStock.STEAM, "WWCP"),
     T32TenderChristmas("DefaultChristmas",train.common.library.TypeOfRollingStock.FREIGHT, "WWCP"),
-    RheingoldSalon1Christmas("DefaultChristmas", train.common.library.TypeOfRollingStock.PASSENGER, "WWCP")
-    //minecraftTemplateUntradeable("template-icon", STEAM)
+    RheingoldSalon1Christmas("DefaultChristmas", train.common.library.TypeOfRollingStock.PASSENGER, "WWCP"),
+    RheingoldSalon2Christmas("DefaultChristmas", train.common.library.TypeOfRollingStock.PASSENGER, "WWCP"),
+    RheingoldSpeise1Christmas("DefaultChristmas", train.common.library.TypeOfRollingStock.PASSENGER, "WWCP"),
+    RheingoldSpeise2Christmas("DefaultChristmas", train.common.library.TypeOfRollingStock.PASSENGER, "WWCP")
+
+        //minecraftTemplateUntradeable("template-icon", STEAM)
     ;
 
 

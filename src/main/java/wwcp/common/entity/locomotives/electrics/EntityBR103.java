@@ -7,6 +7,7 @@ import train.client.render.register.TrainRenderRecord;
 import train.common.Traincraft;
 import train.common.api.ElectricTrain;
 import train.common.core.util.TraincraftUtil;
+import train.common.library.EnumSounds;
 import train.common.library.sounds.SoundRecord;
 import wwcp.client.render.rollingstock.locomotives.electrics.BR103;
 import wwcp.common.core.handler.Transport;
@@ -81,6 +82,6 @@ public class EntityBR103 extends ElectricTrain {
 
     @Override
     public SoundRecord getSoundRecord() {
-        return null;
+        return EnumSounds.locoElectricBR185;
     }
 }

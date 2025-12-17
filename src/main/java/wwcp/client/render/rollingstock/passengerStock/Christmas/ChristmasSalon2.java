@@ -10,9 +10,16 @@
 package wwcp.client.render.rollingstock.passengerStock.Christmas; //Path where the model is located
 
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
 import tmt.ModelConverter;
 import tmt.ModelRendererTurbo;
+import tmt.Tessellator;
 import train.common.enums.BoxName;
+import wwcp.client.render.rollingstock.bogies.EUBogies.GorlitzBack;
+import wwcp.client.render.rollingstock.bogies.EUBogies.GorlitzFront;
+import wwcp.common.library.Info;
 
 public class ChristmasSalon2 extends ModelConverter //Same as Filename
 {
@@ -499,7 +506,7 @@ public class ChristmasSalon2 extends ModelConverter //Same as Filename
 		bodyModel[464] = new ModelRendererTurbo(this, 473, 393, textureX, textureY); // Box 44
 		bodyModel[465] = new ModelRendererTurbo(this, 481, 393, textureX, textureY); // Box 45
 		bodyModel[466] = new ModelRendererTurbo(this, 489, 393, textureX, textureY); // Box 47
-		bodyModel[467] = new ModelRendererTurbo(this, 497, 393, textureX, textureY, BoxName.lamp); // Christmaslights
+		bodyModel[467] = new ModelRendererTurbo(this, 497, 393, textureX, textureY, "lamp"); // Christmaslights
 		bodyModel[468] = new ModelRendererTurbo(this, 505, 393, textureX, textureY); // Box 56
 		bodyModel[469] = new ModelRendererTurbo(this, 377, 401, textureX, textureY); // Box 57
 		bodyModel[470] = new ModelRendererTurbo(this, 385, 401, textureX, textureY); // Box 58
@@ -523,9 +530,9 @@ public class ChristmasSalon2 extends ModelConverter //Same as Filename
 		bodyModel[488] = new ModelRendererTurbo(this, 417, 409, textureX, textureY); // Box 82
 		bodyModel[489] = new ModelRendererTurbo(this, 425, 409, textureX, textureY); // Box 83
 		bodyModel[490] = new ModelRendererTurbo(this, 433, 409, textureX, textureY); // Box 84
-		bodyModel[491] = new ModelRendererTurbo(this, 441, 409, textureX, textureY, BoxName.lamp); // Christmaslights
-		bodyModel[492] = new ModelRendererTurbo(this, 449, 409, textureX, textureY, BoxName.lamp); // Christmaslights
-		bodyModel[493] = new ModelRendererTurbo(this, 457, 409, textureX, textureY, BoxName.lamp); // Christmaslights
+		bodyModel[491] = new ModelRendererTurbo(this, 441, 409, textureX, textureY, "lamp"); // Christmaslights
+		bodyModel[492] = new ModelRendererTurbo(this, 449, 409, textureX, textureY, "lamp"); // Christmaslights
+		bodyModel[493] = new ModelRendererTurbo(this, 457, 409, textureX, textureY, "lamp"); // Christmaslights
 		bodyModel[494] = new ModelRendererTurbo(this, 377, 393, textureX, textureY); // Box 96
 		bodyModel[495] = new ModelRendererTurbo(this, 401, 393, textureX, textureY); // Box 97
 		bodyModel[496] = new ModelRendererTurbo(this, 409, 393, textureX, textureY); // Box 98
@@ -2079,7 +2086,7 @@ public class ChristmasSalon2 extends ModelConverter //Same as Filename
 		bodyModel[504] = new ModelRendererTurbo(this, 473, 393, textureX, textureY); // Box 106
 		bodyModel[505] = new ModelRendererTurbo(this, 481, 393, textureX, textureY); // Box 107
 		bodyModel[506] = new ModelRendererTurbo(this, 489, 393, textureX, textureY); // Box 108
-		bodyModel[507] = new ModelRendererTurbo(this, 497, 393, textureX, textureY, BoxName.lamp); // Christmaslights
+		bodyModel[507] = new ModelRendererTurbo(this, 497, 393, textureX, textureY, "lamp"); // Christmaslights
 		bodyModel[508] = new ModelRendererTurbo(this, 505, 393, textureX, textureY); // Box 110
 		bodyModel[509] = new ModelRendererTurbo(this, 377, 401, textureX, textureY); // Box 111
 		bodyModel[510] = new ModelRendererTurbo(this, 385, 401, textureX, textureY); // Box 112
@@ -2103,9 +2110,9 @@ public class ChristmasSalon2 extends ModelConverter //Same as Filename
 		bodyModel[528] = new ModelRendererTurbo(this, 417, 409, textureX, textureY); // Box 130
 		bodyModel[529] = new ModelRendererTurbo(this, 425, 409, textureX, textureY); // Box 131
 		bodyModel[530] = new ModelRendererTurbo(this, 433, 409, textureX, textureY); // Box 132
-		bodyModel[531] = new ModelRendererTurbo(this, 441, 409, textureX, textureY, BoxName.lamp); // Christmaslights
-		bodyModel[532] = new ModelRendererTurbo(this, 449, 409, textureX, textureY, BoxName.lamp); // Christmaslights
-		bodyModel[533] = new ModelRendererTurbo(this, 457, 409, textureX, textureY, BoxName.lamp); // Christmaslights
+		bodyModel[531] = new ModelRendererTurbo(this, 441, 409, textureX, textureY, "lamp"); // Christmaslights
+		bodyModel[532] = new ModelRendererTurbo(this, 449, 409, textureX, textureY, "lamp"); // Christmaslights
+		bodyModel[533] = new ModelRendererTurbo(this, 457, 409, textureX, textureY, "lamp"); // Christmaslights
 		bodyModel[534] = new ModelRendererTurbo(this, 377, 393, textureX, textureY); // Box 136
 		bodyModel[535] = new ModelRendererTurbo(this, 401, 393, textureX, textureY); // Box 137
 		bodyModel[536] = new ModelRendererTurbo(this, 409, 393, textureX, textureY); // Box 138
@@ -2119,7 +2126,7 @@ public class ChristmasSalon2 extends ModelConverter //Same as Filename
 		bodyModel[544] = new ModelRendererTurbo(this, 473, 393, textureX, textureY); // Box 146
 		bodyModel[545] = new ModelRendererTurbo(this, 481, 393, textureX, textureY); // Box 147
 		bodyModel[546] = new ModelRendererTurbo(this, 489, 393, textureX, textureY); // Box 148
-		bodyModel[547] = new ModelRendererTurbo(this, 497, 393, textureX, textureY, BoxName.lamp); // Christmaslights
+		bodyModel[547] = new ModelRendererTurbo(this, 497, 393, textureX, textureY, "lamp"); // Christmaslights
 		bodyModel[548] = new ModelRendererTurbo(this, 505, 393, textureX, textureY); // Box 150
 		bodyModel[549] = new ModelRendererTurbo(this, 377, 401, textureX, textureY); // Box 151
 		bodyModel[550] = new ModelRendererTurbo(this, 385, 401, textureX, textureY); // Box 152
@@ -2143,9 +2150,9 @@ public class ChristmasSalon2 extends ModelConverter //Same as Filename
 		bodyModel[568] = new ModelRendererTurbo(this, 417, 409, textureX, textureY); // Box 170
 		bodyModel[569] = new ModelRendererTurbo(this, 425, 409, textureX, textureY); // Box 171
 		bodyModel[570] = new ModelRendererTurbo(this, 433, 409, textureX, textureY); // Box 172
-		bodyModel[571] = new ModelRendererTurbo(this, 441, 409, textureX, textureY, BoxName.lamp); // Christmaslights
-		bodyModel[572] = new ModelRendererTurbo(this, 449, 409, textureX, textureY, BoxName.lamp); // Christmaslights
-		bodyModel[573] = new ModelRendererTurbo(this, 457, 409, textureX, textureY, BoxName.lamp); // Christmaslights
+		bodyModel[571] = new ModelRendererTurbo(this, 441, 409, textureX, textureY, "lamp"); // Christmaslights
+		bodyModel[572] = new ModelRendererTurbo(this, 449, 409, textureX, textureY, "lamp"); // Christmaslights
+		bodyModel[573] = new ModelRendererTurbo(this, 457, 409, textureX, textureY, "lamp"); // Christmaslights
 		bodyModel[574] = new ModelRendererTurbo(this, 377, 393, textureX, textureY); // Box 176
 		bodyModel[575] = new ModelRendererTurbo(this, 401, 393, textureX, textureY); // Box 177
 		bodyModel[576] = new ModelRendererTurbo(this, 409, 393, textureX, textureY); // Box 178
@@ -2159,7 +2166,7 @@ public class ChristmasSalon2 extends ModelConverter //Same as Filename
 		bodyModel[584] = new ModelRendererTurbo(this, 473, 393, textureX, textureY); // Box 186
 		bodyModel[585] = new ModelRendererTurbo(this, 481, 393, textureX, textureY); // Box 187
 		bodyModel[586] = new ModelRendererTurbo(this, 489, 393, textureX, textureY); // Box 188
-		bodyModel[587] = new ModelRendererTurbo(this, 497, 393, textureX, textureY, BoxName.lamp); // Christmaslights
+		bodyModel[587] = new ModelRendererTurbo(this, 497, 393, textureX, textureY, "lamp"); // Christmaslights
 		bodyModel[588] = new ModelRendererTurbo(this, 505, 393, textureX, textureY); // Box 190
 		bodyModel[589] = new ModelRendererTurbo(this, 377, 401, textureX, textureY); // Box 191
 		bodyModel[590] = new ModelRendererTurbo(this, 385, 401, textureX, textureY); // Box 192
@@ -2183,9 +2190,9 @@ public class ChristmasSalon2 extends ModelConverter //Same as Filename
 		bodyModel[608] = new ModelRendererTurbo(this, 417, 409, textureX, textureY); // Box 210
 		bodyModel[609] = new ModelRendererTurbo(this, 425, 409, textureX, textureY); // Box 211
 		bodyModel[610] = new ModelRendererTurbo(this, 433, 409, textureX, textureY); // Box 212
-		bodyModel[611] = new ModelRendererTurbo(this, 441, 409, textureX, textureY, BoxName.lamp); // Christmaslights
-		bodyModel[612] = new ModelRendererTurbo(this, 449, 409, textureX, textureY, BoxName.lamp); // Christmaslights
-		bodyModel[613] = new ModelRendererTurbo(this, 457, 409, textureX, textureY, BoxName.lamp); // Christmaslights
+		bodyModel[611] = new ModelRendererTurbo(this, 441, 409, textureX, textureY, "lamp"); // Christmaslights
+		bodyModel[612] = new ModelRendererTurbo(this, 449, 409, textureX, textureY, "lamp"); // Christmaslights
+		bodyModel[613] = new ModelRendererTurbo(this, 457, 409, textureX, textureY, "lamp"); // Christmaslights
 		bodyModel[614] = new ModelRendererTurbo(this, 377, 393, textureX, textureY); // Box 216
 		bodyModel[615] = new ModelRendererTurbo(this, 401, 393, textureX, textureY); // Box 217
 		bodyModel[616] = new ModelRendererTurbo(this, 409, 393, textureX, textureY); // Box 218
@@ -2199,7 +2206,7 @@ public class ChristmasSalon2 extends ModelConverter //Same as Filename
 		bodyModel[624] = new ModelRendererTurbo(this, 473, 393, textureX, textureY); // Box 226
 		bodyModel[625] = new ModelRendererTurbo(this, 481, 393, textureX, textureY); // Box 227
 		bodyModel[626] = new ModelRendererTurbo(this, 489, 393, textureX, textureY); // Box 228
-		bodyModel[627] = new ModelRendererTurbo(this, 497, 393, textureX, textureY, BoxName.lamp); // Christmaslights
+		bodyModel[627] = new ModelRendererTurbo(this, 497, 393, textureX, textureY, "lamp"); // Christmaslights
 		bodyModel[628] = new ModelRendererTurbo(this, 505, 393, textureX, textureY); // Box 230
 		bodyModel[629] = new ModelRendererTurbo(this, 377, 401, textureX, textureY); // Box 231
 		bodyModel[630] = new ModelRendererTurbo(this, 385, 401, textureX, textureY); // Box 232
@@ -2223,9 +2230,9 @@ public class ChristmasSalon2 extends ModelConverter //Same as Filename
 		bodyModel[648] = new ModelRendererTurbo(this, 417, 409, textureX, textureY); // Box 250
 		bodyModel[649] = new ModelRendererTurbo(this, 425, 409, textureX, textureY); // Box 251
 		bodyModel[650] = new ModelRendererTurbo(this, 433, 409, textureX, textureY); // Box 252
-		bodyModel[651] = new ModelRendererTurbo(this, 441, 409, textureX, textureY, BoxName.lamp); // Christmaslights
-		bodyModel[652] = new ModelRendererTurbo(this, 449, 409, textureX, textureY, BoxName.lamp); // Christmaslights
-		bodyModel[653] = new ModelRendererTurbo(this, 457, 409, textureX, textureY, BoxName.lamp); // Christmaslights
+		bodyModel[651] = new ModelRendererTurbo(this, 441, 409, textureX, textureY, "lamp"); // Christmaslights
+		bodyModel[652] = new ModelRendererTurbo(this, 449, 409, textureX, textureY, "lamp"); // Christmaslights
+		bodyModel[653] = new ModelRendererTurbo(this, 457, 409, textureX, textureY, "lamp"); // Christmaslights
 		bodyModel[654] = new ModelRendererTurbo(this, 377, 393, textureX, textureY); // Box 256
 		bodyModel[655] = new ModelRendererTurbo(this, 401, 393, textureX, textureY); // Box 257
 		bodyModel[656] = new ModelRendererTurbo(this, 409, 393, textureX, textureY); // Box 258
@@ -2239,7 +2246,7 @@ public class ChristmasSalon2 extends ModelConverter //Same as Filename
 		bodyModel[664] = new ModelRendererTurbo(this, 473, 393, textureX, textureY); // Box 266
 		bodyModel[665] = new ModelRendererTurbo(this, 481, 393, textureX, textureY); // Box 267
 		bodyModel[666] = new ModelRendererTurbo(this, 489, 393, textureX, textureY); // Box 268
-		bodyModel[667] = new ModelRendererTurbo(this, 497, 393, textureX, textureY, BoxName.lamp); // Christmaslights
+		bodyModel[667] = new ModelRendererTurbo(this, 497, 393, textureX, textureY, "lamp"); // Christmaslights
 		bodyModel[668] = new ModelRendererTurbo(this, 505, 393, textureX, textureY); // Box 270
 		bodyModel[669] = new ModelRendererTurbo(this, 377, 401, textureX, textureY); // Box 271
 		bodyModel[670] = new ModelRendererTurbo(this, 385, 401, textureX, textureY); // Box 272
@@ -2263,9 +2270,9 @@ public class ChristmasSalon2 extends ModelConverter //Same as Filename
 		bodyModel[688] = new ModelRendererTurbo(this, 417, 409, textureX, textureY); // Box 290
 		bodyModel[689] = new ModelRendererTurbo(this, 425, 409, textureX, textureY); // Box 291
 		bodyModel[690] = new ModelRendererTurbo(this, 433, 409, textureX, textureY); // Box 292
-		bodyModel[691] = new ModelRendererTurbo(this, 441, 409, textureX, textureY, BoxName.lamp); // Christmaslights
-		bodyModel[692] = new ModelRendererTurbo(this, 449, 409, textureX, textureY, BoxName.lamp); // Christmaslights
-		bodyModel[693] = new ModelRendererTurbo(this, 457, 409, textureX, textureY, BoxName.lamp); // Christmaslights
+		bodyModel[691] = new ModelRendererTurbo(this, 441, 409, textureX, textureY, "lamp"); // Christmaslights
+		bodyModel[692] = new ModelRendererTurbo(this, 449, 409, textureX, textureY, "lamp"); // Christmaslights
+		bodyModel[693] = new ModelRendererTurbo(this, 457, 409, textureX, textureY, "lamp"); // Christmaslights
 		bodyModel[694] = new ModelRendererTurbo(this, 377, 393, textureX, textureY); // Box 296
 		bodyModel[695] = new ModelRendererTurbo(this, 401, 393, textureX, textureY); // Box 297
 		bodyModel[696] = new ModelRendererTurbo(this, 409, 393, textureX, textureY); // Box 298
@@ -2279,7 +2286,7 @@ public class ChristmasSalon2 extends ModelConverter //Same as Filename
 		bodyModel[704] = new ModelRendererTurbo(this, 473, 393, textureX, textureY); // Box 306
 		bodyModel[705] = new ModelRendererTurbo(this, 481, 393, textureX, textureY); // Box 307
 		bodyModel[706] = new ModelRendererTurbo(this, 489, 393, textureX, textureY); // Box 308
-		bodyModel[707] = new ModelRendererTurbo(this, 497, 393, textureX, textureY, BoxName.lamp); // Christmaslights
+		bodyModel[707] = new ModelRendererTurbo(this, 497, 393, textureX, textureY, "lamp"); // Christmaslights
 		bodyModel[708] = new ModelRendererTurbo(this, 505, 393, textureX, textureY); // Box 310
 		bodyModel[709] = new ModelRendererTurbo(this, 377, 401, textureX, textureY); // Box 311
 		bodyModel[710] = new ModelRendererTurbo(this, 385, 401, textureX, textureY); // Box 312
@@ -2303,9 +2310,9 @@ public class ChristmasSalon2 extends ModelConverter //Same as Filename
 		bodyModel[728] = new ModelRendererTurbo(this, 417, 409, textureX, textureY); // Box 330
 		bodyModel[729] = new ModelRendererTurbo(this, 425, 409, textureX, textureY); // Box 331
 		bodyModel[730] = new ModelRendererTurbo(this, 433, 409, textureX, textureY); // Box 332
-		bodyModel[731] = new ModelRendererTurbo(this, 441, 409, textureX, textureY, BoxName.lamp); // Christmaslights
-		bodyModel[732] = new ModelRendererTurbo(this, 449, 409, textureX, textureY, BoxName.lamp); // Christmaslights
-		bodyModel[733] = new ModelRendererTurbo(this, 457, 409, textureX, textureY, BoxName.lamp); // Christmaslights
+		bodyModel[731] = new ModelRendererTurbo(this, 441, 409, textureX, textureY, "lamp"); // Christmaslights
+		bodyModel[732] = new ModelRendererTurbo(this, 449, 409, textureX, textureY, "lamp"); // Christmaslights
+		bodyModel[733] = new ModelRendererTurbo(this, 457, 409, textureX, textureY, "lamp"); // Christmaslights
 		bodyModel[734] = new ModelRendererTurbo(this, 377, 393, textureX, textureY); // Box 3
 		bodyModel[735] = new ModelRendererTurbo(this, 401, 393, textureX, textureY); // Box 12
 		bodyModel[736] = new ModelRendererTurbo(this, 409, 393, textureX, textureY); // Box 13
@@ -2319,7 +2326,7 @@ public class ChristmasSalon2 extends ModelConverter //Same as Filename
 		bodyModel[744] = new ModelRendererTurbo(this, 473, 393, textureX, textureY); // Box 44
 		bodyModel[745] = new ModelRendererTurbo(this, 481, 393, textureX, textureY); // Box 45
 		bodyModel[746] = new ModelRendererTurbo(this, 489, 393, textureX, textureY); // Box 47
-		bodyModel[747] = new ModelRendererTurbo(this, 497, 393, textureX, textureY, BoxName.lamp); // Christmaslights
+		bodyModel[747] = new ModelRendererTurbo(this, 497, 393, textureX, textureY, "lamp"); // Christmaslights
 		bodyModel[748] = new ModelRendererTurbo(this, 505, 393, textureX, textureY); // Box 56
 		bodyModel[749] = new ModelRendererTurbo(this, 377, 401, textureX, textureY); // Box 57
 		bodyModel[750] = new ModelRendererTurbo(this, 385, 401, textureX, textureY); // Box 58
@@ -2343,9 +2350,9 @@ public class ChristmasSalon2 extends ModelConverter //Same as Filename
 		bodyModel[768] = new ModelRendererTurbo(this, 417, 409, textureX, textureY); // Box 82
 		bodyModel[769] = new ModelRendererTurbo(this, 425, 409, textureX, textureY); // Box 83
 		bodyModel[770] = new ModelRendererTurbo(this, 433, 409, textureX, textureY); // Box 84
-		bodyModel[771] = new ModelRendererTurbo(this, 441, 409, textureX, textureY, BoxName.lamp); // Christmaslights
-		bodyModel[772] = new ModelRendererTurbo(this, 449, 409, textureX, textureY, BoxName.lamp); // Christmaslights
-		bodyModel[773] = new ModelRendererTurbo(this, 457, 409, textureX, textureY, BoxName.lamp); // Christmaslights
+		bodyModel[771] = new ModelRendererTurbo(this, 441, 409, textureX, textureY, "lamp"); // Christmaslights
+		bodyModel[772] = new ModelRendererTurbo(this, 449, 409, textureX, textureY, "lamp"); // Christmaslights
+		bodyModel[773] = new ModelRendererTurbo(this, 457, 409, textureX, textureY, "lamp"); // Christmaslights
 		bodyModel[774] = new ModelRendererTurbo(this, 377, 393, textureX, textureY); // Box 96
 		bodyModel[775] = new ModelRendererTurbo(this, 401, 393, textureX, textureY); // Box 97
 		bodyModel[776] = new ModelRendererTurbo(this, 409, 393, textureX, textureY); // Box 98
@@ -2359,7 +2366,7 @@ public class ChristmasSalon2 extends ModelConverter //Same as Filename
 		bodyModel[784] = new ModelRendererTurbo(this, 473, 393, textureX, textureY); // Box 106
 		bodyModel[785] = new ModelRendererTurbo(this, 481, 393, textureX, textureY); // Box 107
 		bodyModel[786] = new ModelRendererTurbo(this, 489, 393, textureX, textureY); // Box 108
-		bodyModel[787] = new ModelRendererTurbo(this, 497, 393, textureX, textureY, BoxName.lamp); // Christmaslights
+		bodyModel[787] = new ModelRendererTurbo(this, 497, 393, textureX, textureY, "lamp"); // Christmaslights
 		bodyModel[788] = new ModelRendererTurbo(this, 505, 393, textureX, textureY); // Box 110
 		bodyModel[789] = new ModelRendererTurbo(this, 377, 401, textureX, textureY); // Box 111
 		bodyModel[790] = new ModelRendererTurbo(this, 385, 401, textureX, textureY); // Box 112
@@ -2383,9 +2390,9 @@ public class ChristmasSalon2 extends ModelConverter //Same as Filename
 		bodyModel[808] = new ModelRendererTurbo(this, 417, 409, textureX, textureY); // Box 130
 		bodyModel[809] = new ModelRendererTurbo(this, 425, 409, textureX, textureY); // Box 131
 		bodyModel[810] = new ModelRendererTurbo(this, 433, 409, textureX, textureY); // Box 132
-		bodyModel[811] = new ModelRendererTurbo(this, 441, 409, textureX, textureY, BoxName.lamp); // Christmaslights
-		bodyModel[812] = new ModelRendererTurbo(this, 449, 409, textureX, textureY, BoxName.lamp); // Christmaslights
-		bodyModel[813] = new ModelRendererTurbo(this, 457, 409, textureX, textureY, BoxName.lamp); // Christmaslights
+		bodyModel[811] = new ModelRendererTurbo(this, 441, 409, textureX, textureY, "lamp"); // Christmaslights
+		bodyModel[812] = new ModelRendererTurbo(this, 449, 409, textureX, textureY, "lamp"); // Christmaslights
+		bodyModel[813] = new ModelRendererTurbo(this, 457, 409, textureX, textureY, "lamp"); // Christmaslights
 		bodyModel[814] = new ModelRendererTurbo(this, 377, 393, textureX, textureY); // Box 136
 		bodyModel[815] = new ModelRendererTurbo(this, 401, 393, textureX, textureY); // Box 137
 		bodyModel[816] = new ModelRendererTurbo(this, 409, 393, textureX, textureY); // Box 138
@@ -2399,7 +2406,7 @@ public class ChristmasSalon2 extends ModelConverter //Same as Filename
 		bodyModel[824] = new ModelRendererTurbo(this, 473, 393, textureX, textureY); // Box 146
 		bodyModel[825] = new ModelRendererTurbo(this, 481, 393, textureX, textureY); // Box 147
 		bodyModel[826] = new ModelRendererTurbo(this, 489, 393, textureX, textureY); // Box 148
-		bodyModel[827] = new ModelRendererTurbo(this, 497, 393, textureX, textureY, BoxName.lamp); // Christmaslights
+		bodyModel[827] = new ModelRendererTurbo(this, 497, 393, textureX, textureY, "lamp"); // Christmaslights
 		bodyModel[828] = new ModelRendererTurbo(this, 505, 393, textureX, textureY); // Box 150
 		bodyModel[829] = new ModelRendererTurbo(this, 377, 401, textureX, textureY); // Box 151
 		bodyModel[830] = new ModelRendererTurbo(this, 385, 401, textureX, textureY); // Box 152
@@ -2423,9 +2430,9 @@ public class ChristmasSalon2 extends ModelConverter //Same as Filename
 		bodyModel[848] = new ModelRendererTurbo(this, 417, 409, textureX, textureY); // Box 170
 		bodyModel[849] = new ModelRendererTurbo(this, 425, 409, textureX, textureY); // Box 171
 		bodyModel[850] = new ModelRendererTurbo(this, 433, 409, textureX, textureY); // Box 172
-		bodyModel[851] = new ModelRendererTurbo(this, 441, 409, textureX, textureY, BoxName.lamp); // Christmaslights
-		bodyModel[852] = new ModelRendererTurbo(this, 449, 409, textureX, textureY, BoxName.lamp); // Christmaslights
-		bodyModel[853] = new ModelRendererTurbo(this, 457, 409, textureX, textureY, BoxName.lamp); // Christmaslights
+		bodyModel[851] = new ModelRendererTurbo(this, 441, 409, textureX, textureY, "lamp"); // Christmaslights
+		bodyModel[852] = new ModelRendererTurbo(this, 449, 409, textureX, textureY, "lamp"); // Christmaslights
+		bodyModel[853] = new ModelRendererTurbo(this, 457, 409, textureX, textureY, "lamp"); // Christmaslights
 		bodyModel[854] = new ModelRendererTurbo(this, 377, 393, textureX, textureY); // Box 176
 		bodyModel[855] = new ModelRendererTurbo(this, 401, 393, textureX, textureY); // Box 177
 		bodyModel[856] = new ModelRendererTurbo(this, 409, 393, textureX, textureY); // Box 178
@@ -2439,7 +2446,7 @@ public class ChristmasSalon2 extends ModelConverter //Same as Filename
 		bodyModel[864] = new ModelRendererTurbo(this, 473, 393, textureX, textureY); // Box 186
 		bodyModel[865] = new ModelRendererTurbo(this, 481, 393, textureX, textureY); // Box 187
 		bodyModel[866] = new ModelRendererTurbo(this, 489, 393, textureX, textureY); // Box 188
-		bodyModel[867] = new ModelRendererTurbo(this, 497, 393, textureX, textureY, BoxName.lamp); // Christmaslights
+		bodyModel[867] = new ModelRendererTurbo(this, 497, 393, textureX, textureY, "lamp"); // Christmaslights
 		bodyModel[868] = new ModelRendererTurbo(this, 505, 393, textureX, textureY); // Box 190
 		bodyModel[869] = new ModelRendererTurbo(this, 377, 401, textureX, textureY); // Box 191
 		bodyModel[870] = new ModelRendererTurbo(this, 385, 401, textureX, textureY); // Box 192
@@ -2463,9 +2470,9 @@ public class ChristmasSalon2 extends ModelConverter //Same as Filename
 		bodyModel[888] = new ModelRendererTurbo(this, 417, 409, textureX, textureY); // Box 210
 		bodyModel[889] = new ModelRendererTurbo(this, 425, 409, textureX, textureY); // Box 211
 		bodyModel[890] = new ModelRendererTurbo(this, 433, 409, textureX, textureY); // Box 212
-		bodyModel[891] = new ModelRendererTurbo(this, 441, 409, textureX, textureY, BoxName.lamp); // Christmaslights
-		bodyModel[892] = new ModelRendererTurbo(this, 449, 409, textureX, textureY, BoxName.lamp); // Christmaslights
-		bodyModel[893] = new ModelRendererTurbo(this, 457, 409, textureX, textureY,BoxName.lamp); // Christmaslights
+		bodyModel[891] = new ModelRendererTurbo(this, 441, 409, textureX, textureY, "lamp"); // Christmaslights
+		bodyModel[892] = new ModelRendererTurbo(this, 449, 409, textureX, textureY, "lamp"); // Christmaslights
+		bodyModel[893] = new ModelRendererTurbo(this, 457, 409, textureX, textureY,"lamp"); // Christmaslights
 		bodyModel[894] = new ModelRendererTurbo(this, 377, 393, textureX, textureY); // Box 216
 		bodyModel[895] = new ModelRendererTurbo(this, 401, 393, textureX, textureY); // Box 217
 		bodyModel[896] = new ModelRendererTurbo(this, 409, 393, textureX, textureY); // Box 218
@@ -2479,7 +2486,7 @@ public class ChristmasSalon2 extends ModelConverter //Same as Filename
 		bodyModel[904] = new ModelRendererTurbo(this, 473, 393, textureX, textureY); // Box 226
 		bodyModel[905] = new ModelRendererTurbo(this, 481, 393, textureX, textureY); // Box 227
 		bodyModel[906] = new ModelRendererTurbo(this, 489, 393, textureX, textureY); // Box 228
-		bodyModel[907] = new ModelRendererTurbo(this, 497, 393, textureX, textureY, BoxName.lamp); // Christmaslights
+		bodyModel[907] = new ModelRendererTurbo(this, 497, 393, textureX, textureY, "lamp"); // Christmaslights
 		bodyModel[908] = new ModelRendererTurbo(this, 505, 393, textureX, textureY); // Box 230
 		bodyModel[909] = new ModelRendererTurbo(this, 377, 401, textureX, textureY); // Box 231
 		bodyModel[910] = new ModelRendererTurbo(this, 385, 401, textureX, textureY); // Box 232
@@ -2503,9 +2510,9 @@ public class ChristmasSalon2 extends ModelConverter //Same as Filename
 		bodyModel[928] = new ModelRendererTurbo(this, 417, 409, textureX, textureY); // Box 250
 		bodyModel[929] = new ModelRendererTurbo(this, 425, 409, textureX, textureY); // Box 251
 		bodyModel[930] = new ModelRendererTurbo(this, 433, 409, textureX, textureY); // Box 252
-		bodyModel[931] = new ModelRendererTurbo(this, 441, 409, textureX, textureY, BoxName.lamp); // Christmaslights
-		bodyModel[932] = new ModelRendererTurbo(this, 449, 409, textureX, textureY, BoxName.lamp); // Christmaslights
-		bodyModel[933] = new ModelRendererTurbo(this, 457, 409, textureX, textureY, BoxName.lamp); // Christmaslights
+		bodyModel[931] = new ModelRendererTurbo(this, 441, 409, textureX, textureY, "lamp"); // Christmaslights
+		bodyModel[932] = new ModelRendererTurbo(this, 449, 409, textureX, textureY, "lamp"); // Christmaslights
+		bodyModel[933] = new ModelRendererTurbo(this, 457, 409, textureX, textureY, "lamp"); // Christmaslights
 		bodyModel[934] = new ModelRendererTurbo(this, 377, 393, textureX, textureY); // Box 256
 		bodyModel[935] = new ModelRendererTurbo(this, 401, 393, textureX, textureY); // Box 257
 		bodyModel[936] = new ModelRendererTurbo(this, 409, 393, textureX, textureY); // Box 258
@@ -2519,7 +2526,7 @@ public class ChristmasSalon2 extends ModelConverter //Same as Filename
 		bodyModel[944] = new ModelRendererTurbo(this, 473, 393, textureX, textureY); // Box 266
 		bodyModel[945] = new ModelRendererTurbo(this, 481, 393, textureX, textureY); // Box 267
 		bodyModel[946] = new ModelRendererTurbo(this, 489, 393, textureX, textureY); // Box 268
-		bodyModel[947] = new ModelRendererTurbo(this, 497, 393, textureX, textureY, BoxName.lamp); // Christmaslights
+		bodyModel[947] = new ModelRendererTurbo(this, 497, 393, textureX, textureY, "lamp"); // Christmaslights
 		bodyModel[948] = new ModelRendererTurbo(this, 505, 393, textureX, textureY); // Box 270
 		bodyModel[949] = new ModelRendererTurbo(this, 377, 401, textureX, textureY); // Box 271
 		bodyModel[950] = new ModelRendererTurbo(this, 385, 401, textureX, textureY); // Box 272
@@ -2543,9 +2550,9 @@ public class ChristmasSalon2 extends ModelConverter //Same as Filename
 		bodyModel[968] = new ModelRendererTurbo(this, 417, 409, textureX, textureY); // Box 290
 		bodyModel[969] = new ModelRendererTurbo(this, 425, 409, textureX, textureY); // Box 291
 		bodyModel[970] = new ModelRendererTurbo(this, 433, 409, textureX, textureY); // Box 292
-		bodyModel[971] = new ModelRendererTurbo(this, 441, 409, textureX, textureY, BoxName.lamp); // Christmaslights
-		bodyModel[972] = new ModelRendererTurbo(this, 449, 409, textureX, textureY, BoxName.lamp); // Christmaslights
-		bodyModel[973] = new ModelRendererTurbo(this, 457, 409, textureX, textureY, BoxName.lamp); // Christmaslights
+		bodyModel[971] = new ModelRendererTurbo(this, 441, 409, textureX, textureY, "lamp"); // Christmaslights
+		bodyModel[972] = new ModelRendererTurbo(this, 449, 409, textureX, textureY, "lamp"); // Christmaslights
+		bodyModel[973] = new ModelRendererTurbo(this, 457, 409, textureX, textureY, "lamp"); // Christmaslights
 		bodyModel[974] = new ModelRendererTurbo(this, 377, 393, textureX, textureY); // Box 296
 		bodyModel[975] = new ModelRendererTurbo(this, 401, 393, textureX, textureY); // Box 297
 		bodyModel[976] = new ModelRendererTurbo(this, 409, 393, textureX, textureY); // Box 298
@@ -2559,7 +2566,7 @@ public class ChristmasSalon2 extends ModelConverter //Same as Filename
 		bodyModel[984] = new ModelRendererTurbo(this, 473, 393, textureX, textureY); // Box 306
 		bodyModel[985] = new ModelRendererTurbo(this, 481, 393, textureX, textureY); // Box 307
 		bodyModel[986] = new ModelRendererTurbo(this, 489, 393, textureX, textureY); // Box 308
-		bodyModel[987] = new ModelRendererTurbo(this, 497, 393, textureX, textureY, BoxName.lamp); // Christmaslights
+		bodyModel[987] = new ModelRendererTurbo(this, 497, 393, textureX, textureY, "lamp"); // Christmaslights
 		bodyModel[988] = new ModelRendererTurbo(this, 505, 393, textureX, textureY); // Box 310
 		bodyModel[989] = new ModelRendererTurbo(this, 377, 401, textureX, textureY); // Box 311
 		bodyModel[990] = new ModelRendererTurbo(this, 385, 401, textureX, textureY); // Box 312
@@ -4443,17 +4450,17 @@ public class ChristmasSalon2 extends ModelConverter //Same as Filename
 		bodyModel[1008] = new ModelRendererTurbo(this, 417, 409, textureX, textureY); // Box 330
 		bodyModel[1009] = new ModelRendererTurbo(this, 425, 409, textureX, textureY); // Box 331
 		bodyModel[1010] = new ModelRendererTurbo(this, 433, 409, textureX, textureY); // Box 332
-		bodyModel[1011] = new ModelRendererTurbo(this, 441, 409, textureX, textureY, BoxName.lamp);// Christmaslights
-		bodyModel[1012] = new ModelRendererTurbo(this, 449, 409, textureX, textureY, BoxName.lamp);// Christmaslights
-		bodyModel[1013] = new ModelRendererTurbo(this, 457, 409, textureX, textureY, BoxName.lamp);// Christmaslights
-		bodyModel[1014] = new ModelRendererTurbo(this, 0, 217, textureX, textureY); // Box 283
+		bodyModel[1011] = new ModelRendererTurbo(this, 441, 409, textureX, textureY, "lamp");// Christmaslights
+		bodyModel[1012] = new ModelRendererTurbo(this, 449, 409, textureX, textureY, "lamp");// Christmaslights
+		bodyModel[1013] = new ModelRendererTurbo(this, 457, 409, textureX, textureY, "lamp");// Christmaslights
+		bodyModel[1014] = new ModelRendererTurbo(this, 0, 217, textureX, textureY , "lamp"); // Box 283
 		bodyModel[1015] = new ModelRendererTurbo(this, 4, 416, textureX, textureY); // Box 284
 		bodyModel[1016] = new ModelRendererTurbo(this, 3, 485, textureX, textureY); // Box 285
 		bodyModel[1017] = new ModelRendererTurbo(this, 77, 450, textureX, textureY); // Box 288
 		bodyModel[1018] = new ModelRendererTurbo(this, 4, 389, textureX, textureY); // Box 657
 		bodyModel[1019] = new ModelRendererTurbo(this, 3, 485, textureX, textureY); // Box 238
 		bodyModel[1020] = new ModelRendererTurbo(this, 4, 416, textureX, textureY); // Box 239
-		bodyModel[1021] = new ModelRendererTurbo(this, 0, 217, textureX, textureY); // Box 243
+		bodyModel[1021] = new ModelRendererTurbo(this, 0, 217, textureX, textureY, "lamp"); // Box 243
 		bodyModel[1022] = new ModelRendererTurbo(this, 76, 449, textureX, textureY); // Box 660
 		bodyModel[1023] = new ModelRendererTurbo(this, 4, 389, textureX, textureY); // Box 656
 		bodyModel[1024] = new ModelRendererTurbo(this, 73, 1, textureX, textureY); // Walkway
@@ -4554,5 +4561,25 @@ public class ChristmasSalon2 extends ModelConverter //Same as Filename
 
 		bodyModel[1029].addShapeBox(0F, 0F, 0F, 2, 17, 1, 0F,0F, 0F, 0F, 0F, 0F, -0.25F, 0F, 0F, -0.25F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -0.25F, 0F, 0F, -0.25F, 0F, 0F, 0F); // Walkway
 		bodyModel[1029].setRotationPoint(94F, -16F, -5F);
+	}
+
+	GorlitzFront frontBogie = new GorlitzFront();
+	GorlitzBack backBogie = new GorlitzBack();
+
+	@Override
+	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+		super.render(entity, f, f1, f2, f3, f4, f5);
+
+		Tessellator.bindTexture(new ResourceLocation(Info.modID, "textures/bogies/EUBogies/RheingoldBogie.png"));
+		GL11.glPushMatrix();
+		GL11.glTranslatef(3.85f,0f,0);
+		backBogie.render(entity, f, f1, f2, f3, f4, f5);
+		GL11.glPopMatrix();
+
+		Tessellator.bindTexture(new ResourceLocation(Info.modID, "textures/bogies/EUBogies/RheingoldBogie.png"));
+		GL11.glPushMatrix();
+		GL11.glTranslatef(-3.6f,0f,0);
+		frontBogie.render(entity, f, f1, f2, f3, f4, f5);
+		GL11.glPopMatrix();
 	}
 }
