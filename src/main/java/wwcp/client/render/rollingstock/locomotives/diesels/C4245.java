@@ -10,8 +10,16 @@
 package wwcp.client.render.rollingstock.locomotives.diesels; //Path where the model is located
 
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
 import tmt.ModelConverter;
 import tmt.ModelRendererTurbo;
+import tmt.Tessellator;
+import train.client.renderhelper.ModelRenderHelper;
+import train.common.api.AbstractTrains;
+import wwcp.client.render.rollingstock.bogies.AmericanTrucks.Type_B;
+import wwcp.common.library.Info;
 
 public class C4245 extends ModelConverter //Same as Filename
 {
@@ -20,7 +28,7 @@ public class C4245 extends ModelConverter //Same as Filename
 
 	public C4245() //Same as Filename
 	{
-		bodyModel = new ModelRendererTurbo[699];
+		bodyModel = new ModelRendererTurbo[700];
 
 		initbodyModel_1();
 		initbodyModel_2();
@@ -128,14 +136,14 @@ public class C4245 extends ModelConverter //Same as Filename
 		bodyModel[92] = new ModelRendererTurbo(this, 385, 81, textureX, textureY); // Box 104
 		bodyModel[93] = new ModelRendererTurbo(this, 489, 81, textureX, textureY); // Box 105
 		bodyModel[94] = new ModelRendererTurbo(this, 201, 57, textureX, textureY); // Box 106
-		bodyModel[95] = new ModelRendererTurbo(this, 161, 65, textureX, textureY); // RMR
+		bodyModel[95] = new ModelRendererTurbo(this, 161, 65, textureX, textureY,"lamp"); // RMR
 		bodyModel[96] = new ModelRendererTurbo(this, 145, 57, textureX, textureY); // Box 108
 		bodyModel[97] = new ModelRendererTurbo(this, 441, 73, textureX, textureY); // Box 109
 		bodyModel[98] = new ModelRendererTurbo(this, 497, 81, textureX, textureY); // Box 110
 		bodyModel[99] = new ModelRendererTurbo(this, 1, 89, textureX, textureY); // Box 111
 		bodyModel[100] = new ModelRendererTurbo(this, 9, 89, textureX, textureY); // Box 112
 		bodyModel[101] = new ModelRendererTurbo(this, 425, 65, textureX, textureY); // Box 113
-		bodyModel[102] = new ModelRendererTurbo(this, 1, 73, textureX, textureY); // RML
+		bodyModel[102] = new ModelRendererTurbo(this, 1, 73, textureX, textureY,"lamp"); // RML
 		bodyModel[103] = new ModelRendererTurbo(this, 17, 89, textureX, textureY); // Box 115
 		bodyModel[104] = new ModelRendererTurbo(this, 33, 89, textureX, textureY); // Box 116
 		bodyModel[105] = new ModelRendererTurbo(this, 49, 89, textureX, textureY); // Box 117
@@ -243,8 +251,8 @@ public class C4245 extends ModelConverter //Same as Filename
 		bodyModel[207] = new ModelRendererTurbo(this, 137, 137, textureX, textureY); // Box 225
 		bodyModel[208] = new ModelRendererTurbo(this, 433, 97, textureX, textureY); // Box 226
 		bodyModel[209] = new ModelRendererTurbo(this, 473, 97, textureX, textureY); // Box 11
-		bodyModel[210] = new ModelRendererTurbo(this, 489, 97, textureX, textureY); // RLT
-		bodyModel[211] = new ModelRendererTurbo(this, 25, 105, textureX, textureY); // RLB
+		bodyModel[210] = new ModelRendererTurbo(this, 489, 97, textureX, textureY,"lamp"); // RLT
+		bodyModel[211] = new ModelRendererTurbo(this, 25, 105, textureX, textureY,"lamp"); // RLB
 		bodyModel[212] = new ModelRendererTurbo(this, 57, 169, textureX, textureY); // Box 145
 		bodyModel[213] = new ModelRendererTurbo(this, 225, 105, textureX, textureY); // Box 52
 		bodyModel[214] = new ModelRendererTurbo(this, 393, 113, textureX, textureY); // Box 52
@@ -385,15 +393,15 @@ public class C4245 extends ModelConverter //Same as Filename
 		bodyModel[349] = new ModelRendererTurbo(this, 497, 169, textureX, textureY); // FNumL
 		bodyModel[350] = new ModelRendererTurbo(this, 193, 177, textureX, textureY); // FNumR
 		bodyModel[351] = new ModelRendererTurbo(this, 417, 161, textureX, textureY); // Box 383
-		bodyModel[352] = new ModelRendererTurbo(this, 441, 161, textureX, textureY); // FLT
-		bodyModel[353] = new ModelRendererTurbo(this, 505, 161, textureX, textureY); // FLB
+		bodyModel[352] = new ModelRendererTurbo(this, 441, 161, textureX, textureY,"lamp"); // FLT
+		bodyModel[353] = new ModelRendererTurbo(this, 505, 161, textureX, textureY,"lamp"); // FLB
 		bodyModel[354] = new ModelRendererTurbo(this, 265, 161, textureX, textureY); // Box 470
 		bodyModel[355] = new ModelRendererTurbo(this, 257, 169, textureX, textureY); // Box 471
 		bodyModel[356] = new ModelRendererTurbo(this, 9, 161, textureX, textureY); // LMRed
 		bodyModel[357] = new ModelRendererTurbo(this, 241, 161, textureX, textureY); // LMGreen
-		bodyModel[358] = new ModelRendererTurbo(this, 265, 169, textureX, textureY); // LMWhite
+		bodyModel[358] = new ModelRendererTurbo(this, 265, 169, textureX, textureY,"lamp"); // LMWhite
 		bodyModel[359] = new ModelRendererTurbo(this, 497, 169, textureX, textureY); // RMRed
-		bodyModel[360] = new ModelRendererTurbo(this, 57, 177, textureX, textureY); // RMWhite
+		bodyModel[360] = new ModelRendererTurbo(this, 57, 177, textureX, textureY,"lamp"); // RMWhite
 		bodyModel[361] = new ModelRendererTurbo(this, 97, 177, textureX, textureY); // RMGreen
 		bodyModel[362] = new ModelRendererTurbo(this, 297, 177, textureX, textureY); // Box 11
 		bodyModel[363] = new ModelRendererTurbo(this, 305, 177, textureX, textureY); // Box 11
@@ -429,7 +437,7 @@ public class C4245 extends ModelConverter //Same as Filename
 		bodyModel[393] = new ModelRendererTurbo(this, 97, 185, textureX, textureY); // Box 417
 		bodyModel[394] = new ModelRendererTurbo(this, 105, 185, textureX, textureY); // Box 418
 		bodyModel[395] = new ModelRendererTurbo(this, 113, 185, textureX, textureY); // Exhaust
-		bodyModel[396] = new ModelRendererTurbo(this, 129, 185, textureX, textureY); // BGBW
+		bodyModel[396] = new ModelRendererTurbo(this, 129, 185, textureX, textureY,"prime1"); // BGBW
 		bodyModel[397] = new ModelRendererTurbo(this, 57, 153, textureX, textureY); // Box 430
 		bodyModel[398] = new ModelRendererTurbo(this, 89, 81, textureX, textureY); // Box 431
 		bodyModel[399] = new ModelRendererTurbo(this, 89, 250, textureX, textureY); // Box 432
@@ -601,16 +609,16 @@ public class C4245 extends ModelConverter //Same as Filename
 		bodyModel[20].setRotationPoint(33F, -21F, -9F);
 
 		bodyModel[21].addShapeBox(0F, 0F, 0F, 20, 1, 4, 0F,0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F); // Box 31
-		bodyModel[21].setRotationPoint(33F, -22.5F, -2F);
+		bodyModel[21].setRotationPoint(33F, -22.75F, -2F);
 
 		bodyModel[22].addShapeBox(0F, 0F, 0F, 1, 1, 4, 0F,0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F); // Box 32
-		bodyModel[22].setRotationPoint(38F, -21.5F, -2F);
+		bodyModel[22].setRotationPoint(38F, -21.75F, -2F);
 
 		bodyModel[23].addShapeBox(0F, 0F, 0F, 1, 1, 4, 0F,0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F); // Box 33
-		bodyModel[23].setRotationPoint(43F, -21.5F, -2F);
+		bodyModel[23].setRotationPoint(43F, -21.75F, -2F);
 
 		bodyModel[24].addShapeBox(0F, 0F, 0F, 1, 1, 4, 0F,0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F); // Box 34
-		bodyModel[24].setRotationPoint(48F, -21.5F, -2F);
+		bodyModel[24].setRotationPoint(48F, -21.75F, -2F);
 
 		bodyModel[25].addShapeBox(0F, 0F, 0F, 2, 2, 18, 0F,0F, 0F, 0F, 0F, 0F, 2F, 0F, 0F, 2F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 2F, 0F, 0F, 2F, 0F, 0F, 0F); // Box 36
 		bodyModel[25].setRotationPoint(-54F, -2F, -9F);
@@ -786,7 +794,7 @@ public class C4245 extends ModelConverter //Same as Filename
 		bodyModel[81].setRotationPoint(37F, -12F, -7.05F);
 
 		bodyModel[82].addShapeBox(0F, 0F, 0F, 19, 1, 28, 0F,-0.25F, 0F, 0F, 0.75F, 0F, 0F, 0.75F, 0F, -12F, -0.25F, 0F, -12F, -0.25F, 0F, 0F, 0.75F, 0F, 0F, 0.75F, 0F, -12F, -0.25F, 0F, -12F); // Box 94
-		bodyModel[82].setRotationPoint(33F, -21.01F, -8F);
+		bodyModel[82].setRotationPoint(33F, -21.51F, -8F);
 
 		bodyModel[83].addShapeBox(0F, 0F, 0F, 1, 1, 5, 0F,-1F, 0.5F, 0F, 0F, 0.5F, 0F, 0F, -0.5F, 0F, 1F, 0.5F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F); // Box 95
 		bodyModel[83].setRotationPoint(54F, -17F, 1F);
@@ -2121,9 +2129,9 @@ public class C4245 extends ModelConverter //Same as Filename
 		bodyModel[524] = new ModelRendererTurbo(this, 295, 221, textureX, textureY); // Box 532
 		bodyModel[525] = new ModelRendererTurbo(this, 306, 215, textureX, textureY); // Box 533
 		bodyModel[526] = new ModelRendererTurbo(this, 176, 290, textureX, textureY); // Box 534
-		bodyModel[527] = new ModelRendererTurbo(this, 501, 209, textureX, textureY); // Box 535
+		bodyModel[527] = new ModelRendererTurbo(this, 501, 209, textureX, textureY,"lamp"); // Box 535
 		bodyModel[528] = new ModelRendererTurbo(this, 420, 210, textureX, textureY); // Box 536
-		bodyModel[529] = new ModelRendererTurbo(this, 441, 247, textureX, textureY); // Box 537
+		bodyModel[529] = new ModelRendererTurbo(this, 441, 247, textureX, textureY,"lamp"); // Box 537
 		bodyModel[530] = new ModelRendererTurbo(this, 447, 258, textureX, textureY); // Box 543
 		bodyModel[531] = new ModelRendererTurbo(this, 457, 258, textureX, textureY); // Box 544
 		bodyModel[532] = new ModelRendererTurbo(this, 24, 222, textureX, textureY); // Box 556
@@ -2137,9 +2145,9 @@ public class C4245 extends ModelConverter //Same as Filename
 		bodyModel[540] = new ModelRendererTurbo(this, 408, 299, textureX, textureY); // Box 564
 		bodyModel[541] = new ModelRendererTurbo(this, 355, 283, textureX, textureY); // Box 565
 		bodyModel[542] = new ModelRendererTurbo(this, 370, 274, textureX, textureY); // Box 566
-		bodyModel[543] = new ModelRendererTurbo(this, 205, 217, textureX, textureY); // Ditchlight_Right_Bottom_ble
+		bodyModel[543] = new ModelRendererTurbo(this, 205, 217, textureX, textureY,"ditch"); // Ditchlight_Right_Bottom_ble
 		bodyModel[544] = new ModelRendererTurbo(this, 209, 228, textureX, textureY); // box
-		bodyModel[545] = new ModelRendererTurbo(this, 217, 217, textureX, textureY); // Ditchlight_Left_Bottom_ble
+		bodyModel[545] = new ModelRendererTurbo(this, 217, 217, textureX, textureY,"ditch"); // Ditchlight_Left_Bottom_ble
 		bodyModel[546] = new ModelRendererTurbo(this, 225, 217, textureX, textureY); // Ditchlight_Left_Bottom_ble
 		bodyModel[547] = new ModelRendererTurbo(this, 217, 210, textureX, textureY); // Box 572
 		bodyModel[548] = new ModelRendererTurbo(this, 225, 210, textureX, textureY); // Box 573
@@ -2156,10 +2164,10 @@ public class C4245 extends ModelConverter //Same as Filename
 		bodyModel[559] = new ModelRendererTurbo(this, 422, 246, textureX, textureY); // Box 582
 		bodyModel[560] = new ModelRendererTurbo(this, 177, 300, textureX, textureY); // Box 583
 		bodyModel[561] = new ModelRendererTurbo(this, 387, 212, textureX, textureY); // Box 584
-		bodyModel[562] = new ModelRendererTurbo(this, 455, 239, textureX, textureY); // Box 585
+		bodyModel[562] = new ModelRendererTurbo(this, 455, 239, textureX, textureY,"lamp"); // Box 585
 		bodyModel[563] = new ModelRendererTurbo(this, 263, 214, textureX, textureY); // Box 586
 		bodyModel[564] = new ModelRendererTurbo(this, 263, 214, textureX, textureY); // Box 587
-		bodyModel[565] = new ModelRendererTurbo(this, 455, 239, textureX, textureY); // Box 588
+		bodyModel[565] = new ModelRendererTurbo(this, 455, 239, textureX, textureY,"lamp"); // Box 588
 		bodyModel[566] = new ModelRendererTurbo(this, 481, 197, textureX, textureY); // Box 589
 		bodyModel[567] = new ModelRendererTurbo(this, 83, 278, textureX, textureY); // Box 590
 		bodyModel[568] = new ModelRendererTurbo(this, 113, 282, textureX, textureY); // Box 592
@@ -2170,19 +2178,19 @@ public class C4245 extends ModelConverter //Same as Filename
 		bodyModel[573] = new ModelRendererTurbo(this, 147, 213, textureX, textureY); // Box 597
 		bodyModel[574] = new ModelRendererTurbo(this, 123, 296, textureX, textureY); // Box 598
 		bodyModel[575] = new ModelRendererTurbo(this, 495, 222, textureX, textureY); // Box 128
-		bodyModel[576] = new ModelRendererTurbo(this, 115, 327, textureX, textureY); // Light_Rear_Right
-		bodyModel[577] = new ModelRendererTurbo(this, 97, 326, textureX, textureY); // Light_Rear_Left
-		bodyModel[578] = new ModelRendererTurbo(this, 3, 341, textureX, textureY); // Box 601
-		bodyModel[579] = new ModelRendererTurbo(this, 3, 341, textureX, textureY); // Box 602
+		bodyModel[576] = new ModelRendererTurbo(this, 115, 327, textureX, textureY,"lamp"); // Light_Rear_Right
+		bodyModel[577] = new ModelRendererTurbo(this, 97, 326, textureX, textureY,"lamp"); // Light_Rear_Left
+		bodyModel[578] = new ModelRendererTurbo(this, 3, 341, textureX, textureY,"lamp"); // Box 601
+		bodyModel[579] = new ModelRendererTurbo(this, 3, 341, textureX, textureY,"lamp"); // Box 602
 		bodyModel[580] = new ModelRendererTurbo(this, 345, 251, textureX, textureY); // Box 609
 		bodyModel[581] = new ModelRendererTurbo(this, 289, 227, textureX, textureY); // Box 610
 		bodyModel[582] = new ModelRendererTurbo(this, 497, 265, textureX, textureY); // Box 611
 		bodyModel[583] = new ModelRendererTurbo(this, 158, 210, textureX, textureY); // Box 612
 		bodyModel[584] = new ModelRendererTurbo(this, 404, 260, textureX, textureY); // Box 613
 		bodyModel[585] = new ModelRendererTurbo(this, 491, 246, textureX, textureY); // Box 614
-		bodyModel[586] = new ModelRendererTurbo(this, 217, 240, textureX, textureY); // Box 615
+		bodyModel[586] = new ModelRendererTurbo(this, 217, 240, textureX, textureY, "ditch"); // Box 615
 		bodyModel[587] = new ModelRendererTurbo(this, 225, 235, textureX, textureY); // Box 616
-		bodyModel[588] = new ModelRendererTurbo(this, 217, 248, textureX, textureY); // Box 617
+		bodyModel[588] = new ModelRendererTurbo(this, 217, 248, textureX, textureY,"ditch"); // Box 617
 		bodyModel[589] = new ModelRendererTurbo(this, 225, 243, textureX, textureY); // Box 618
 		bodyModel[590] = new ModelRendererTurbo(this, 2, 288, textureX, textureY); // Box 11
 		bodyModel[591] = new ModelRendererTurbo(this, 7, 257, textureX, textureY); // Bell
@@ -2206,7 +2214,7 @@ public class C4245 extends ModelConverter //Same as Filename
 		bodyModel[609] = new ModelRendererTurbo(this, 454, 276, textureX, textureY); // Box 638
 		bodyModel[610] = new ModelRendererTurbo(this, 466, 262, textureX, textureY); // Box 639
 		bodyModel[611] = new ModelRendererTurbo(this, 431, 277, textureX, textureY); // Box 640
-		bodyModel[612] = new ModelRendererTurbo(this, 118, 194, textureX, textureY); // Box 641
+		bodyModel[612] = new ModelRendererTurbo(this, 118, 194, textureX, textureY,"prime1"); // Box 641
 		bodyModel[613] = new ModelRendererTurbo(this, 113, 215, textureX, textureY); // Box 642
 		bodyModel[614] = new ModelRendererTurbo(this, 487, 363, textureX, textureY); // Box 107
 		bodyModel[615] = new ModelRendererTurbo(this, 305, 277, textureX, textureY); // Box 107
@@ -2293,6 +2301,7 @@ public class C4245 extends ModelConverter //Same as Filename
 		bodyModel[696] = new ModelRendererTurbo(this, 277, 199, textureX, textureY); // Box 695
 		bodyModel[697] = new ModelRendererTurbo(this, 107, 384, textureX, textureY); // Box 492
 		bodyModel[698] = new ModelRendererTurbo(this, 107, 384, textureX, textureY); // Box 698
+		bodyModel[699] = new ModelRendererTurbo(this, 225, 263, textureX, textureY); // Box 699
 
 		bodyModel[500].addBox(0F, 0F, 0F, 2, 3, 1, 0F); // Box 504
 		bodyModel[500].setRotationPoint(53F, -21F, 5F);
@@ -2904,5 +2913,38 @@ public class C4245 extends ModelConverter //Same as Filename
 
 		bodyModel[698].addShapeBox(0F, 0F, 0F, 1, 2, 5, 0F,0F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, 0F, 0F, 0F); // Box 698
 		bodyModel[698].setRotationPoint(60F, -4F, -2.5F);
+
+		bodyModel[699].addShapeBox(0F, 0F, 0F, 20, 1, 16, 0F,0F, -0.5F, 0.25F, 0F, -0.5F, 0.25F, 0F, -0.5F, 0.25F, 0F, -0.5F, 0.25F, 0F, 0F, 0.25F, 0F, 0F, 0.25F, 0F, 0F, 0.25F, 0F, 0F, 0.25F); // Box 699
+		bodyModel[699].setRotationPoint(33F, -22F, -8F);
 	}
+
+	Type_B bogie = new Type_B();
+
+
+	@Override
+	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+		ModelRenderHelper.renderModelWithRollingStockLightControls(bodyModel, entity, f5);
+
+		if (entity instanceof AbstractTrains && ((AbstractTrains) entity).getColor() == 10 || entity instanceof AbstractTrains && ((AbstractTrains) entity).getColor() == 10
+		) {
+			Tessellator.bindTexture(new ResourceLocation(Info.modID, "textures/bogies/Type_B_Truck.png"));
+			GL11.glPushMatrix();
+			GL11.glTranslated(-2.2f, -0.0, 0);//front & rear
+			bogie.render(entity, f, f1, f2, f3, f4, f5);
+
+			GL11.glTranslated(4.4f, 0, 0);//rear
+			bogie.render(entity, f, f1, f2, f3, f4, f5);
+			GL11.glPopMatrix();
+		} else {
+			Tessellator.bindTexture(new ResourceLocation(Info.modID, "textures/bogies/Type_B_Truck.png"));
+			GL11.glPushMatrix();
+			GL11.glTranslated(-2.2f, -0.0, 0);//front & rear
+			bogie.render(entity, f, f1, f2, f3, f4, f5);
+
+			GL11.glTranslated(4.4f, 0, 0);//rear
+			bogie.render(entity, f, f1, f2, f3, f4, f5);
+			GL11.glPopMatrix();
+		}
+	}
+
 }

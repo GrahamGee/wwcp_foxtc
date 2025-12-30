@@ -639,12 +639,7 @@ public class Transport {
                 55000f, 5000f, 210f, 112.6f, false, true, 0);
     }
 
-    //M640 - Note, Incomplete until I find the data
-    public static LocomotiveNoBackspeed M640() {
-        return new LocomotiveNoBackspeed("M640", "Canada", "1972-1992", "Diesel",
-                "", "", type, "Mainline Locomotive",
-                53000f, 4000f, 200f, 120f, false, true, 0);
-    }
+
     //PA
     public static LocomotiveNoBackspeed AlcoPA() {
         return new LocomotiveNoBackspeed("AlcoPA", "America", "1946-1981", "Diesel",
@@ -710,30 +705,37 @@ public class Transport {
 
     //SLRV
     public static LocomotiveNoBackspeed SLRV() {
-        return new LocomotiveNoBackspeed("SLRV", "America", "1996-Present", "Electric",
+        return new LocomotiveNoBackspeed("SLRV", "US", "1996-Present", "Electric",
                 nick, "", type, " Light Rail",
                 14300f, 750f, 70f, 116f, false, true, 0);
     }
 
     //EF4
     public static LocomotiveNoBackspeed EF4() {
-        return new LocomotiveNoBackspeed("EF4", "America", "1948-1974", "Electric",
+        return new LocomotiveNoBackspeed("EF4", "US", "1948-1974", "Electric",
                 nick, "Little Joe", type, " Freight Electric",
-                75700f, 5110, 247.5f, 109f, false, true, 0);
+                75700f, 5110, 247.5f, 112f, false, true, 0);
     }
 
     //EP3
     public static LocomotiveNoBackspeed EP3() {
-        return new LocomotiveNoBackspeed("EP3", "America", "1919-1957", "Electric",
+        return new LocomotiveNoBackspeed("EP3", "US", "1919-1957", "Electric",
                 nick, "Quill", type, " Passenger Electric",
                 105000f, 3396, 300f, 106f, false, true, 0);
     }
 
     //ES2
     public static LocomotiveNoBackspeed ES2() {
-        return new LocomotiveNoBackspeed("ES2", "America", "1916-1974", "Electric",
+        return new LocomotiveNoBackspeed("ES2", "US", "1916-1974", "Electric",
                 nick, "", type, " Steeplecab",
                 34000f, 475, 82f, 56f, false, true, 0);
+    }
+
+    //EP2
+    public static LocomotiveNoBackspeed EP2() {
+        return new LocomotiveNoBackspeed("EP2", "US", "1919-1953", "Electric",
+                nick, "Bipolar", type, " Passenger Electric",
+                58000, 2220, 120, 140f, false, true, 0);
     }
 
     //C424
@@ -759,9 +761,16 @@ public class Transport {
 
     //C630M
     public static LocomotiveNoBackspeed C630M() {
-        return new LocomotiveNoBackspeed("C630M", "Canada", "1965-Present", "Diesel",
+        return new LocomotiveNoBackspeed("C630M", "CA", "1965-Present", "Diesel",
                 nick, "", type, " Road Diesel",
                 79500f, 3000f, 197f, 105f, false, true, 0);
+    }
+
+    //M640
+    public static LocomotiveNoBackspeed M640() {
+        return new LocomotiveNoBackspeed("M640", "CA", "1971-1992", "Diesel",
+                nick, "", type, " Road Diesel",
+                93000f, 4000f, 198f, 105f, false, true, 0);
     }
 
     //GP7
@@ -808,7 +817,7 @@ public class Transport {
 
     //SD45
     public static LocomotiveNoBackspeed SD45() {
-        return new LocomotiveNoBackspeed("SD45", "America", "1965-Present", "Diesel",
+        return new LocomotiveNoBackspeed("SD45", "US", "1965-Present", "Diesel",
                 nick, "", type, " Special Duty Locomotive",
                 82100f, 3600f, 184f, 112f, false, true, 0);
     }
@@ -906,14 +915,14 @@ public class Transport {
 
     //GP30
     public static LocomotiveNoBackspeed GP30() {
-        return new LocomotiveNoBackspeed("GP30", "America", "1961-Present", "Diesel",
+        return new LocomotiveNoBackspeed("GP30", "US", "1961-Present", "Diesel",
                 nick, "", type, " General Purpose Locomotive",
                 50000f, 2250f, 130f, 112f, false, true, 0);
     }
 
     //GP35
     public static LocomotiveNoBackspeed GP35() {
-        return new LocomotiveNoBackspeed("GP35", "America", "1963-Present", "Diesel",
+        return new LocomotiveNoBackspeed("GP35", "US", "1963-Present", "Diesel",
                 nick, "", type, " General Purpose Locomotive",
                 50000f, 2500f, 130f, 112f, false, true, 0);
     }
@@ -1693,9 +1702,15 @@ public class Transport {
                 "", type, " Boxcar", 80.9f, 120f, false, true, 0);
     }
 
+    //EP2 Center
+    public static Rollingstock EP2_Center() {
+        return new Rollingstock("EP2 Center", "US", "1919-1974", "",
+                "", type, " Passenger Electric", 25f, 120f, false, true, 0);
+    }
+
     //AAR 40ft Boxcar
     public static Rollingstock AAR40ft() {
-        return new Rollingstock("40ft AAR Boxcar", "America", "1937-2000", "",
+        return new Rollingstock("40ft AAR Boxcar", "US", "1937-2000", "",
                 "", type, " Boxcar", 20f, 120f, false, true, 0);
     }
 
@@ -1725,8 +1740,20 @@ public class Transport {
 
     //XM4A
     public static Rollingstock XM4A() {
-        return new Rollingstock("XM4A", "America", "1963-2000~", "",
+        return new Rollingstock("XM4A", "US", "1961-2000~", "",
                 "", type, " Boxcar", 28.75f, 120f, false, true, 0);
+    }
+
+    //OpenTriLevelAutorack
+    public static Rollingstock OpenTriLevelAutorack() {
+        return new Rollingstock("OpenTriLevelAutorack", "US", "1963-2000~", "",
+                "", type, " Tri Level Autorack", 55f, 120f, false, true, 0);
+    }
+
+    //VertAPacAutorack
+    public static Rollingstock VertAPacAutorack() {
+        return new Rollingstock("VertAPacAutorack", "US", "1971-1980~", "",
+                "", type, " Vertical Autorack", 65f, 120f, false, true, 0);
     }
 
     //40ft CP Mechanical Plug Door Refrigerated Boxcar
@@ -1790,14 +1817,14 @@ public class Transport {
 
     //Gunderson 59'6 Woodchip
     public static Rollingstock Gunderson596Woodchip() {
-        return new Rollingstock("Gunderson596Woodchip", "America", "1986-Present", "",
-                "", type, " Gondola", 25f, 120f, false, true, 0);
+        return new Rollingstock("Gunderson596Woodchip", "America", "1960~2000", "",
+                "", type, " Woodchip Gondola", 25f, 120f, false, true, 0);
     }
 
     //Paccar 64' Woodchip
     public static Rollingstock Paccar64Woodchip() {
-        return new Rollingstock("Paccar64Woodchip", "America", "1975-Present", "",
-                "", type, " Gondola", 30f, 120f, false, true, 0);
+        return new Rollingstock("Paccar64Woodchip", "US", "1975-Present", "",
+                "", type, " Woodchip Gondola", 30f, 120f, false, true, 0);
     }
 
     //NSC 53' Wellcar

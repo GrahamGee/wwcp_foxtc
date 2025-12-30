@@ -1,0 +1,84 @@
+package wwcp.common.recipes;
+
+import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import train.common.api.crafting.ITierCraftingManager;
+import train.common.core.handlers.AbstractRecipeHandler;
+import train.common.core.managers.TierRecipeManager;
+import train.common.library.ItemIDs;
+import wwcp.common.library.WWCPItems;
+
+import java.util.Iterator;
+
+public class RecipesRegisterRollingStock extends AbstractRecipeHandler
+{
+
+    public RecipesRegisterRollingStock(ITierCraftingManager cm)
+    {
+        Iterator var2 = this.ingotSteel.iterator();
+
+        while(var2.hasNext()) {
+            ItemStack k = (ItemStack) var2.next();
+            Item itemSteel = k.getItem();
+            int itemDamageSteel = k.getItemDamage();
+
+            for (ItemStack dye : dyeOrange) {//EP2_Center
+                    betterAddRecipe(3, new ItemStack(ItemIDs.steelcab.item, 1), null, null, dye,
+                            null, new ItemStack(ItemIDs.transformer.item, 1), new ItemStack(ItemIDs.copperWireFine.item, 2),
+                            null, new ItemStack(ItemIDs.steelframe.item, 1), new ItemStack(itemSteel, 4, itemDamageSteel), new ItemStack(WWCPItems.EP2_Center.item), 1);
+            }
+
+            for (ItemStack dye : dyeBrown) {//Paccar64Woodchip
+                betterAddRecipe(2, null, null, null, dye,
+                        null, new ItemStack(Blocks.chest, 1), null,
+                        new ItemStack(ItemIDs.freightCarTruck.item, 2), new ItemStack(ItemIDs.steelframe.item, 2), new ItemStack(itemSteel, 6, itemDamageSteel), new ItemStack(WWCPItems.Paccar64Woodchip.item), 1);
+            }
+
+            for (ItemStack dye : dyeBrown) {//Gunderson596Woodchip
+                betterAddRecipe(2, new ItemStack(ItemIDs.freightCarRibbing.item, 4), null, null, dye,
+                        null, new ItemStack(Blocks.chest, 1), null,
+                        new ItemStack(ItemIDs.freightCarTruck.item, 2), new ItemStack(ItemIDs.steelframe.item, 2), new ItemStack(itemSteel, 4, itemDamageSteel), new ItemStack(WWCPItems.Gunderson596Woodchip.item), 1);
+            }
+
+            for (ItemStack dye : dyeBrown) {//OpenTriLevelAutorack
+                betterAddRecipe(2,null, null, null, dye,
+                        null, new ItemStack(Blocks.chest, 1), null,
+                        new ItemStack(ItemIDs.freightCarTruck.item, 2), new ItemStack(ItemIDs.steelframe.item, 6), new ItemStack(itemSteel, 4, itemDamageSteel), new ItemStack(WWCPItems.OpenTriLevelAutorack.item), 1);
+            }
+
+            for (ItemStack dye : dyeYellow) {//VertAPacAutorack
+                betterAddRecipe(2,null, null, null, dye,
+                        null, new ItemStack(Blocks.chest, 1), null,
+                        new ItemStack(ItemIDs.freightCarTruck.item, 2), new ItemStack(ItemIDs.steelframe.item, 4), new ItemStack(itemSteel, 6, itemDamageSteel), new ItemStack(WWCPItems.VertAPacAutorack.item), 1);
+            }
+
+            for (ItemStack dye : dyeBrown) {//XM4A
+                betterAddRecipe(2, new ItemStack(ItemIDs.freightCarRibbing.item, 4), null, null, dye,
+                        new ItemStack(Blocks.chest, 1), new ItemStack(ItemIDs.boxcarDoor.item, 2), null,
+                        new ItemStack(ItemIDs.freightCarTruck.item, 2), new ItemStack(ItemIDs.steelframe.item, 2), new ItemStack(itemSteel, 2, itemDamageSteel), new ItemStack(WWCPItems.XM4A.item), 1);
+            }
+
+            for (ItemStack dye : dyeBrown) {//AAR 40ft Boxcar
+                betterAddRecipe(2, null, null, null, dye,
+                        new ItemStack(Blocks.chest, 1), new ItemStack(ItemIDs.boxcarDoor.item, 2), null,
+                        new ItemStack(ItemIDs.freightCarTruck.item, 2), new ItemStack(ItemIDs.steelframe.item, 1), new ItemStack(itemSteel, 2, itemDamageSteel), new ItemStack(WWCPItems.AAR40ft.item), 1);
+            }
+
+            for (ItemStack dye : dyeWhite) {//PS2Early3Bay
+                betterAddRecipe(4, new ItemStack(ItemIDs.freightCarRibbing.item, 4),null, null, dye,
+                        new ItemStack(Blocks.chest, 1), new ItemStack(ItemIDs.hopperBay.item, 3), null,
+                        new ItemStack(ItemIDs.freightCarTruck.item, 2), new ItemStack(ItemIDs.steelframe.item, 2), new ItemStack(itemSteel, 2, itemDamageSteel), new ItemStack(WWCPItems.PS2Early3Bay.item), 1);
+            }
+
+        }
+
+    }
+
+    public static void betterAddRecipe(int tier, ItemStack top1, ItemStack top2,
+                                       ItemStack top3, ItemStack top4, ItemStack mid1, ItemStack mid2, ItemStack mid3,
+                                       ItemStack bottom1, ItemStack bottom2, ItemStack bottom3, ItemStack output, int outputSize) {
+        ITierCraftingManager cm = TierRecipeManager.getInstance();
+        cm.addRecipe(tier, top1, bottom1, bottom2, bottom3, top2, top3, mid2, mid3, mid1, top4, output, outputSize);
+    }
+}

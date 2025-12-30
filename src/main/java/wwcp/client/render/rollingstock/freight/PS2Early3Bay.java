@@ -10,8 +10,14 @@
 package wwcp.client.render.rollingstock.freight; //Path where the model is located
 
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
 import tmt.ModelConverter;
 import tmt.ModelRendererTurbo;
+import tmt.Tessellator;
+import wwcp.client.render.rollingstock.bogies.AmericanTrucks.truck_70ton;
+import wwcp.common.library.Info;
 
 public class PS2Early3Bay extends ModelConverter //Same as Filename
 {
@@ -935,10 +941,10 @@ public class PS2Early3Bay extends ModelConverter //Same as Filename
 		bodyModel[205].rotateAngleZ = -0.13962634F;
 
 		bodyModel[206].addBox(0F, 0F, 0F, 53, 11, 0, 0F); // Box 272
-		bodyModel[206].setRotationPoint(-26.5F, -18F, 11.01F);
+		bodyModel[206].setRotationPoint(-26.5F, -18F, 11.1F);
 
 		bodyModel[207].addBox(0F, 0F, 0F, 53, 11, 0, 0F); // Box 273
-		bodyModel[207].setRotationPoint(26.5F, -18F, -11.01F);
+		bodyModel[207].setRotationPoint(26.5F, -18F, -11.1F);
 		bodyModel[207].rotateAngleY = 3.14159265F;
 
 		bodyModel[208].addShapeBox(0F, 0F, 0F, 1, 1, 1, 0F,-0.2F, -0.5F, 0F, -0.2F, -0.5F, 0F, -0.2F, -1F, -0.5F, -0.2F, -1F, -0.5F, -0.2F, 0F, 0F, -0.2F, 0F, 0F, -0.2F, 0F, -0.5F, -0.2F, 0F, -0.5F); // Box 274
@@ -1154,4 +1160,23 @@ public class PS2Early3Bay extends ModelConverter //Same as Filename
 		bodyModel[278].addBox(0F, 0F, 0F, 1, 5, 0, 0F); // Box 280
 		bodyModel[278].setRotationPoint(52.5F, -16.5F, -3F);
 	}
+
+	 truck_70ton bogie = new truck_70ton();
+
+
+	@Override
+	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+		super.render(entity, f, f1, f2, f3, f4, f5);
+
+		Tessellator.bindTexture(new ResourceLocation(Info.modID, "textures/bogies/70ton_truck_black.png"));
+		GL11.glPushMatrix();
+		GL11.glTranslatef(2.55f,0f,0);
+		bogie.render(entity, f, f1, f2, f3, f4, f5);
+		GL11.glPopMatrix();
+		GL11.glPushMatrix();
+		GL11.glTranslatef(-2.55f,0f,0);
+		bogie.render(entity, f, f1, f2, f3, f4, f5);
+		GL11.glPopMatrix();
+	}
+
 }

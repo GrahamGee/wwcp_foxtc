@@ -1,16 +1,24 @@
 //This File was created with the Minecraft-SMP Modelling Toolbox 2.3.0.0
-// Copyright (C) 2019 Minecraft-SMP.de
+// Copyright (C) 2021 Minecraft-SMP.de
 // This file is for Flan's Flying Mod Version 4.0.x+
 
 // Model: 
 // Model Creator: 
-// Created on: 30.09.2018 - 15:22:42
-// Last changed on: 30.09.2018 - 15:22:42
+// Created on: 25.03.2019 - 14:37:32
+// Last changed on: 25.03.2019 - 14:37:32
+
 package wwcp.client.render.rollingstock.freight; //Path where the model is located
 
 
+import net.minecraft.entity.Entity;
+import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
 import tmt.ModelConverter;
 import tmt.ModelRendererTurbo;
+import tmt.Tessellator;
+import train.common.api.AbstractTrains;
+import wwcp.client.render.rollingstock.bogies.AmericanTrucks.truck_70ton;
+import wwcp.common.library.Info;
 
 public class Paccar64Woodchip extends ModelConverter //Same as Filename
 {
@@ -19,7 +27,7 @@ public class Paccar64Woodchip extends ModelConverter //Same as Filename
 
 	public Paccar64Woodchip() //Same as Filename
 	{
-		bodyModel = new ModelRendererTurbo[119];
+		bodyModel = new ModelRendererTurbo[118];
 
 		initbodyModel_1();
 
@@ -144,12 +152,11 @@ public class Paccar64Woodchip extends ModelConverter //Same as Filename
 		bodyModel[110] = new ModelRendererTurbo(this, 385, 9, textureX, textureY); // Box 33
 		bodyModel[111] = new ModelRendererTurbo(this, 209, 25, textureX, textureY); // Box 33
 		bodyModel[112] = new ModelRendererTurbo(this, 17, 1, textureX, textureY); // Box 179
-		bodyModel[113] = new ModelRendererTurbo(this, 1, 129, textureX, textureY); // Box 180
-		bodyModel[114] = new ModelRendererTurbo(this, 329, 41, textureX, textureY); // Box 181
-		bodyModel[115] = new ModelRendererTurbo(this, 41, 25, textureX, textureY); // Box 182
-		bodyModel[116] = new ModelRendererTurbo(this, 225, 25, textureX, textureY); // Box 183
-		bodyModel[117] = new ModelRendererTurbo(this, 369, 9, textureX, textureY); // Box 184
-		bodyModel[118] = new ModelRendererTurbo(this, 345, 9, textureX, textureY); // Box 185
+		bodyModel[113] = new ModelRendererTurbo(this, 329, 41, textureX, textureY); // Box 181
+		bodyModel[114] = new ModelRendererTurbo(this, 41, 25, textureX, textureY); // Box 182
+		bodyModel[115] = new ModelRendererTurbo(this, 225, 25, textureX, textureY); // Box 183
+		bodyModel[116] = new ModelRendererTurbo(this, 369, 9, textureX, textureY); // Box 184
+		bodyModel[117] = new ModelRendererTurbo(this, 345, 9, textureX, textureY); // Box 185
 
 		bodyModel[0].addBox(0F, 0F, 0F, 130, 1, 20, 0F); // Box 1
 		bodyModel[0].setRotationPoint(-65F, 3F, -10F);
@@ -490,22 +497,39 @@ public class Paccar64Woodchip extends ModelConverter //Same as Filename
 		bodyModel[112].addShapeBox(0F, 0F, 0F, 0, 4, 1, 0F,0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F); // Box 179
 		bodyModel[112].setRotationPoint(66.25F, -2F, -3.6F);
 
-		bodyModel[113].addShapeBox(0F, 0F, 0F, 130, 1, 20, 0F,-0.25F, 0F, 0F, -0.25F, 0F, 0F, -0.25F, 0F, 0F, -0.25F, 0F, 0F, -0.25F, 0F, 0F, -0.25F, 0F, 0F, -0.25F, 0F, 0F, -0.25F, 0F, 0F); // Box 180
-		bodyModel[113].setRotationPoint(-65F, -22F, -10F);
+		bodyModel[113].addBox(0F, 0F, 0F, 3, 3, 5, 0F); // Box 181
+		bodyModel[113].setRotationPoint(-1.5F, 4F, 5F);
 
-		bodyModel[114].addBox(0F, 0F, 0F, 3, 3, 5, 0F); // Box 181
-		bodyModel[114].setRotationPoint(-1.5F, 4F, 5F);
+		bodyModel[114].addBox(0F, 0F, 0F, 1, 2, 1, 0F); // Box 182
+		bodyModel[114].setRotationPoint(-0.5F, 4F, 10F);
 
-		bodyModel[115].addBox(0F, 0F, 0F, 1, 2, 1, 0F); // Box 182
-		bodyModel[115].setRotationPoint(-0.5F, 4F, 10F);
+		bodyModel[115].addBox(0F, 0F, 0F, 6, 3, 3, 0F); // Box 183
+		bodyModel[115].setRotationPoint(-3F, 4F, -8F);
 
-		bodyModel[116].addBox(0F, 0F, 0F, 6, 3, 3, 0F); // Box 183
-		bodyModel[116].setRotationPoint(-3F, 4F, -8F);
+		bodyModel[116].addShapeBox(0F, 0F, 0F, 1, 1, 4, 0F,0F, 0F, -0.5F, -0.5F, 0F, -0.5F, -0.5F, 0F, 0F, 0F, 0F, 0F, 0F, -0.5F, -0.5F, -0.5F, -0.5F, -0.5F, -0.5F, -0.5F, 0F, 0F, -0.5F, 0F); // Box 184
+		bodyModel[116].setRotationPoint(65F, 3F, 5.5F);
 
-		bodyModel[117].addShapeBox(0F, 0F, 0F, 1, 1, 4, 0F,0F, 0F, -0.5F, -0.5F, 0F, -0.5F, -0.5F, 0F, 0F, 0F, 0F, 0F, 0F, -0.5F, -0.5F, -0.5F, -0.5F, -0.5F, -0.5F, -0.5F, 0F, 0F, -0.5F, 0F); // Box 184
-		bodyModel[117].setRotationPoint(65F, 3F, 5.5F);
-
-		bodyModel[118].addShapeBox(0F, 0F, 0F, 1, 1, 4, 0F,-0.5F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -0.5F, -0.5F, 0F, -0.5F, -0.5F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, -0.5F, -0.5F, -0.5F, -0.5F); // Box 185
-		bodyModel[118].setRotationPoint(-66F, 3F, -9.5F);
+		bodyModel[117].addShapeBox(0F, 0F, 0F, 1, 1, 4, 0F,-0.5F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -0.5F, -0.5F, 0F, -0.5F, -0.5F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, -0.5F, -0.5F, -0.5F, -0.5F); // Box 185
+		bodyModel[117].setRotationPoint(-66F, 3F, -9.5F);
 	}
+
+	truck_70ton bogie = new truck_70ton();
+
+
+	@Override
+	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+		super.render(entity, f, f1, f2, f3, f4, f5);
+
+		Tessellator.bindTexture(new ResourceLocation(Info.modID, "textures/bogies/70ton_truck_black.png"));
+		GL11.glPushMatrix();
+		GL11.glTranslatef(3.5f,0f,0);
+		bogie.render(entity, f, f1, f2, f3, f4, f5);
+		GL11.glPopMatrix();
+		GL11.glPushMatrix();
+		GL11.glTranslatef(-3.5f,0f,0);
+		bogie.render(entity, f, f1, f2, f3, f4, f5);
+		GL11.glPopMatrix();
+        ((AbstractTrains) entity).getCargoManager().renderCargo((AbstractTrains) entity, f, f1, f2, f3, f4, f5);
+
+    }
 }

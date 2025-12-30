@@ -12,6 +12,8 @@ import train.common.library.sounds.SoundRecord;
 import wwcp.client.render.rollingstock.locomotives.diesels.GP30;
 import wwcp.common.core.handler.Transport;
 
+import java.util.ArrayList;
+
 public class EntityGP30 extends DieselTrain
 {
     public EntityGP30(World world) {
@@ -65,7 +67,7 @@ public class EntityGP30 extends DieselTrain
     }
 
     public final SoundRecord sound = new SoundRecord(this.getClass(), " ", 1.0F, "EMD_16_567D3_Notch8", 0.45F, 28, "EMD_16_567D3_Idle", 0.45F, 30, false, "emd_steelbell_3", 18,
-            new String[]{"leslie_a200_dual_1", "leslie_a200_dual_1","nathan_m3_6","nathan_m3_6","nathan_m3_6","nathan_m3_6","nathan_m3h_1","nathan_m3_6","nathan_m3_6","nathan_m3_6","nathan_m3_6","nathan_m3_6","nathan_m3_6","nathan_m3_6","nathan_m3_6","nathan_m3_6"});
+            new String[]{"leslie_a200_dual_1", "leslie_a200_dual_1","leslie_s3l_1","leslie_s3l_1","leslie_s3l_1","leslie_s3l_1","leslie_s3l_2","leslie_s3l_2","nathan_m3h_2","leslie_s3l_2","leslie_s3l_2","leslie_s3l_2","leslie_s3l_2","leslie_s3l_2","leslie_s3l_2","leslie_s3l_2","leslie_s3l_1"});
     public SoundRecord getSoundRecord() {
         return sound;
     }
@@ -79,7 +81,13 @@ public class EntityGP30 extends DieselTrain
                         "GP30",
                         new float[] { -2.0f,0.15F,0.0F },
                         new float[] { 0F, 180F, 180F },
-                        null)
+                        null,
+                        "smoke",
+                        new ArrayList<double[]>() {
+                            {
+                                add(new double[]{2.3D, 1.25D, 0.0D});
+                            }},
+                        "", null, 10, 2)
                 {
                     @Override
                     public ResourceLocation getTextureFile(String colorAsString)

@@ -13,6 +13,8 @@ import wwcp.client.render.rollingstock.locomotives.diesels.GP35;
 import wwcp.client.render.rollingstock.locomotives.diesels.SD45;
 import wwcp.common.core.handler.Transport;
 
+import java.util.ArrayList;
+
 public class EntitySD45 extends DieselTrain
 {
     public EntitySD45(World world) {
@@ -65,7 +67,9 @@ public class EntitySD45 extends DieselTrain
         return Transport.SD45().fictional;
     }
 
-    public final SoundRecord sound = new SoundRecord(this.getClass(), " ", 1.0F, "EMD_16_645E3_Notch8", 0.45F, 28, "EMD_16_645E3_Notch3", 0.45F, 30, false, "emd_steelbell_3", 18,
+    //EMD_16_645E3_Notch3
+    //Replaced with a similar sounding idle engine sound that makes more sense
+    public final SoundRecord sound = new SoundRecord(this.getClass(), " ", 1.0F, "EMD_16_645E3_Notch8", 0.45F, 28, "EMD_16_567D3_Idle", 0.45F, 30, false, "emd_steelbell_3", 18,
             new String[]{"nathan_m3_6","nathan_m3_6","nathan_m3_6","nathan_m3_6","nathan_m3_6","nathan_m3_6","nathan_m3_6","nathan_m3_6","nathan_m3_6","nathan_m3_6","nathan_m3_6","nathan_m3_6","nathan_m3_6","nathan_m3_6","nathan_m3_6","nathan_m3_6","nathan_m3_6"});
     public SoundRecord getSoundRecord() {
         return sound;
@@ -80,7 +84,13 @@ public class EntitySD45 extends DieselTrain
                         "SD45",
                         new float[] { -2.5f,0.15F,0.0F },
                         new float[] { 0F, 180F, 180F },
-                        null)
+                        null,
+                        "smoke",
+                        new ArrayList<double[]>() {
+                            {
+                                add(new double[]{3.32D, 1.35D, 0.0D});
+                            }},
+                        "", null, 10, 2)
                 {
                     @Override
                     public ResourceLocation getTextureFile(String colorAsString)
