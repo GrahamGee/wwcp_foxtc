@@ -9,11 +9,10 @@ import train.common.api.DieselTrain;
 import train.common.api.LiquidManager;
 import train.common.core.util.TraincraftUtil;
 import train.common.library.sounds.SoundRecord;
-import wwcp.client.render.rollingstock.locomotives.diesels.C630;
-import wwcp.client.render.rollingstock.locomotives.diesels.SD90MACH;
+import wwcp.client.render.rollingstock.locomotives.diesels.C630M;
 import wwcp.common.core.handler.Transport;
 
-import static wwcp.common.library.WWCPItems.C630M;
+import java.util.ArrayList;
 
 public class EntityC630M extends DieselTrain
 {
@@ -54,8 +53,9 @@ public class EntityC630M extends DieselTrain
         return Transport.C630M().fictional;
     }
 
-    public final SoundRecord sound = new SoundRecord(this.getClass(), " ", 1.0F, "ALCO_16_251E_Notch8", 0.65F, 28, "ALCO_16_251E_Idle", 0.65F, 30, false, "alco_bronzebell_3", 18,
-            new String[]{"nathan_m3h_1","nathan_m3h_4","nathan_m3h_4","nathan_m3h_4","nathan_m3h_4","nathan_m3h_2"});
+    //Not technically the correct engine sound, but the engines are similar and this one is so much better
+    public final SoundRecord sound = new SoundRecord(this.getClass(), " ", 1.0F, "ALCO_16_251C_Notch8", 0.65F, 28, "ALCO_16_251C_Idle", 0.65F, 30, false, "alco_bronzebell_3", 18,
+            new String[]{"nathan_m3h_2","nathan_m3h_2","nathan_k5l_3","nathan_k5l_3","nathan_k5l_3","nathan_m3h_2"});
     public SoundRecord getSoundRecord() {
         return sound;
     }
@@ -65,11 +65,17 @@ public class EntityC630M extends DieselTrain
     {
         Traincraft.traincraftRegistry.RegisterRollingStockModel(
                 new TrainRenderRecord(wwcp.common.library.Info.modID,
-                        EntityC630M.class, new C630(),
+                        EntityC630M.class, new C630M(),
                         "C630M",
                         new float[] { -3.0f,0.15F,0.0F },
                         new float[] { 0F, 180F, 180F },
-                        null)
+                        null,
+                        "smoke",
+                        new ArrayList<double[]>() {
+                            {
+                                add(new double[]{1.25D, 1.25D, 0.0D});
+                            }},
+                        "", null, 10, 2)
                 {
                     @Override
                     public ResourceLocation getTextureFile(String colorAsString)

@@ -59,14 +59,8 @@ public class EntityChristmasBR01 extends SteamTrain {
                         new float[]{-3f, 0.15F, 0.0F},
                         new float[]{0F, 180F, 180F},
 
-                        null, "largesmoke", new ArrayList<double[]>() { {
-                    add(new double[] { 5.5D, 1.7D, 0.0D }); }
-                },
-                        "explode", new ArrayList<double[]>() { {
-                    add(new double[] { 5.5D, -0.1875D, 0.6875D });
-                    }
-                },
-                        10, 2)
+                        null, "largesmoke", new ArrayList<double[]>() { {add(new double[] { 5.5D, 1.7D, 0.0D }); }},
+                        "explode", new ArrayList<double[]>() { { add(new double[] { 5.5D, -0.1875D, 0.6875D }); }}, 10, 2)
 
                 {
                     @Override

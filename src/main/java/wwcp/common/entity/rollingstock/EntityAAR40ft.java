@@ -5,24 +5,18 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import train.client.render.register.TrainRenderRecord;
 import train.common.Traincraft;
+import train.common.api.AbstractStandardFixedFreightCar;
 import train.common.api.AbstractStandardFreightCar;
 import train.common.entity.CargoManager;
 import wwcp.client.render.rollingstock.freight.AAR40ftStandardBoxcar;
 import wwcp.client.render.rollingstock.freight.XM4A;
 import wwcp.common.core.handler.Transport;
 
-public class EntityAAR40ft extends AbstractStandardFreightCar {
+public class EntityAAR40ft extends AbstractStandardFixedFreightCar {
 
     public EntityAAR40ft(World world) {
         super(world);
     }
-
-    @Override
-    public CargoManager setupCargoManager()
-    {
-        return null;
-    }
-
 
     @Override
     public void setupTextureDescription()

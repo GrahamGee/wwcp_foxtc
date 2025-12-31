@@ -27,7 +27,7 @@ public final class CreativeTabAmerican extends CreativeTabs
 
 	@Override
 	public ItemStack getIconItemStack() {
-		return new ItemStack(WWCPItems.EP3.item);
+		return new ItemStack(WWCPItems.GP35.item);
 	}
 
 	@Override

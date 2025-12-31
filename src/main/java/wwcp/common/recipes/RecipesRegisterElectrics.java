@@ -1,5 +1,7 @@
 package wwcp.common.recipes;
 
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import train.common.api.crafting.ITierCraftingManager;
@@ -23,13 +25,29 @@ public class RecipesRegisterElectrics extends AbstractRecipeHandler
             int itemDamageSteel = k.getItemDamage();
 
             for (ItemStack dye : dyeOrange) {//EP3
-                cm.addRecipe(3, new ItemStack(ItemIDs.steelcab.item, 2), new ItemStack(ItemIDs.ironBogie.item, 12), new ItemStack(ItemIDs.steelframe.item, 6), new ItemStack(itemSteel, 10, itemDamageSteel), new ItemStack(ItemIDs.pantograph.item, 2), new ItemStack(ItemIDs.partComponentGE.item, 2), new ItemStack(ItemIDs.transformer.item, 6), new ItemStack(ItemIDs.copperWireFine.item, 8), new ItemStack(ItemIDs.controls.item, 2), dye, new ItemStack(WWCPItems.EP3.item, 1), 1);
+                betterAddRecipe(2, new ItemStack(ItemIDs.steelcab.item, 2), new ItemStack(ItemIDs.pantograph.item, 2), new ItemStack(ItemIDs.partComponentGE.item, 3), dye,
+                        new ItemStack(ItemIDs.controls.item, 2), new ItemStack(ItemIDs.transformer.item, 4), new ItemStack(ItemIDs.copperWireFine.item, 8),
+                        new ItemStack(ItemIDs.ironBogie.item, 12), new ItemStack(ItemIDs.steelframe.item, 4), new ItemStack(itemSteel, 12, itemDamageSteel), new ItemStack(WWCPItems.EP3.item), 1);
             }
             for (ItemStack dye : dyeOrange) {//ES2
-                cm.addRecipe(3, new ItemStack(ItemIDs.steelcab.item, 1), new ItemStack(ItemIDs.ironBogie.item, 4), new ItemStack(ItemIDs.steelframe.item, 1), new ItemStack(itemSteel, 2, itemDamageSteel), new ItemStack(ItemIDs.pantograph.item, 1), new ItemStack(ItemIDs.partComponentGE.item, 1), new ItemStack(ItemIDs.transformer.item, 4), new ItemStack(ItemIDs.copperWireFine.item, 4), new ItemStack(ItemIDs.controls.item, 1), dye, new ItemStack(WWCPItems.ES2.item, 1), 1);
+                betterAddRecipe(2, new ItemStack(ItemIDs.steelcab.item, 1), new ItemStack(ItemIDs.pantograph.item, 1), new ItemStack(ItemIDs.partComponentGE.item, 1), dye,
+                        new ItemStack(ItemIDs.controls.item, 1), new ItemStack(ItemIDs.transformer.item, 2), new ItemStack(ItemIDs.copperWireFine.item, 2),
+                        new ItemStack(ItemIDs.ironBogie.item, 4), new ItemStack(ItemIDs.steelframe.item, 1), new ItemStack(itemSteel, 2, itemDamageSteel), new ItemStack(WWCPItems.ES2.item), 1);
             }
             for (ItemStack dye : dyeOrange) {//EF4
-                cm.addRecipe(3, new ItemStack(ItemIDs.steelcab.item, 2), new ItemStack(ItemIDs.ironBogie.item, 12), new ItemStack(ItemIDs.steelframe.item, 6), new ItemStack(itemSteel, 10, itemDamageSteel), new ItemStack(ItemIDs.pantograph.item, 2), new ItemStack(ItemIDs.partComponentGE.item, 4), new ItemStack(ItemIDs.transformer.item, 6), new ItemStack(ItemIDs.copperWireFine.item, 8), new ItemStack(ItemIDs.controls.item, 1), dye, new ItemStack(WWCPItems.EF4.item, 1), 1);
+                betterAddRecipe(2, new ItemStack(ItemIDs.steelcab.item, 2), new ItemStack(ItemIDs.pantograph.item, 2), new ItemStack(ItemIDs.partComponentGE.item, 4), dye,
+                        new ItemStack(ItemIDs.controls.item, 1), new ItemStack(ItemIDs.transformer.item, 4), new ItemStack(ItemIDs.copperWireFine.item, 6),
+                        new ItemStack(ItemIDs.ironBogie.item, 12), new ItemStack(ItemIDs.steelframe.item, 4), new ItemStack(itemSteel, 10, itemDamageSteel), new ItemStack(WWCPItems.EF4.item), 1);
+            }
+            for (ItemStack dye : dyeOrange) {//EP2
+                betterAddRecipe(2, new ItemStack(ItemIDs.steelcab.item, 1), new ItemStack(ItemIDs.pantograph.item, 1), new ItemStack(ItemIDs.partComponentGE.item, 2), dye,
+                        new ItemStack(ItemIDs.controls.item, 1), new ItemStack(ItemIDs.transformer.item, 4), new ItemStack(ItemIDs.copperWireFine.item, 3),
+                        new ItemStack(ItemIDs.ironBogie.item, 9), new ItemStack(ItemIDs.steelframe.item, 2), new ItemStack(itemSteel, 5, itemDamageSteel), new ItemStack(WWCPItems.EP2.item), 1);
+            }
+            for (ItemStack dye : dyeYellow) {//SLRV
+                betterAddRecipe(3, new ItemStack(ItemIDs.steelcab.item, 1), new ItemStack(ItemIDs.pantograph.item, 1), new ItemStack(ItemIDs.partComponentGE.item, 1), dye,
+                        new ItemStack(ItemIDs.controls.item, 1), new ItemStack(ItemIDs.transformer.item, 2), new ItemStack(ItemIDs.copperWireFine.item, 3),
+                        new ItemStack(ItemIDs.ironBogie.item, 4), new ItemStack(ItemIDs.steelframe.item, 1), new ItemStack(itemSteel, 4, itemDamageSteel), new ItemStack(WWCPItems.SLRV.item), 1);
             }
 
         }

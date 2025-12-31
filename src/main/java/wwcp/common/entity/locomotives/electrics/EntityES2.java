@@ -28,7 +28,7 @@ public class EntityES2 extends ElectricTrain {
     }
 
     public float getOptimalDistance(EntityMinecart cart) {
-        return 1.3F;
+        return 1.2F;
     }
 
     @Override
