@@ -20,6 +20,7 @@ public enum WWCPItems
     GP30("item.GP30_Icon", train.common.library.TypeOfRollingStock.DIESEL, "American"),
     GP35("item.GP35_Icon", train.common.library.TypeOfRollingStock.DIESEL, "American"),
     SD45("item.SD45_Icon", train.common.library.TypeOfRollingStock.DIESEL, "American"),
+    SLRVC("SLRV_MID", train.common.library.TypeOfRollingStock.PASSENGER,"American"),
     EurofimaOpen1("item.compartmentEurofima", train.common.library.TypeOfRollingStock.PASSENGER,"European"),
     EurofimaCompartment1("item.compartmentEurofima", train.common.library.TypeOfRollingStock.PASSENGER,"European"),
     EurofimaCompartment1_2("item.compartmentEurofima1_2", train.common.library.TypeOfRollingStock.PASSENGER,"European"),

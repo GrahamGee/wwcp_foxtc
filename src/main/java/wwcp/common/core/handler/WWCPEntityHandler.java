@@ -7,6 +7,7 @@ import wwcp.common.entity.locomotives.electrics.*;
 import wwcp.common.entity.locomotives.steam.EntityChristmasBR01;
 import wwcp.common.entity.locomotives.tenders.EntityT32ChristmasTender;
 import wwcp.common.entity.passenger.Christmas.*;
+import wwcp.common.entity.passenger.EntitySLRVC;
 import wwcp.common.entity.passenger.Eurofima.*;
 import wwcp.common.entity.rollingstock.*;
 import wwcp.common.library.WWCPItems;
@@ -258,6 +259,15 @@ public class WWCPEntityHandler
          * Passenger Stock
          */
 
+        Traincraft.traincraftRegistry
+                .RegisterRollingStockEntity(WWCPItems.SLRVC.item,
+                        new TrainRecord(Transport.SLRVC().name, EntitySLRVC.class, WWCPItems.SLRVC.item,
+                                Transport.SLRVC().additionalText2, Transport.SLRVC().weightinKGs,
+                                new String[] {"Black"}, 5, 0, 0, 0,
+                                0, 0, 0,
+                                0, 0, 0),
+                        Instance()
+                );
         Traincraft.traincraftRegistry
             .RegisterRollingStockEntity(WWCPItems.EurofimaOpen1.item,
                     new TrainRecord(Transport.EurofimaOpen1().name, EntityEurofima1stClass.class, WWCPItems.EurofimaOpen1.item,

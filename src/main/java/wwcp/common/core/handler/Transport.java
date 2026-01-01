@@ -1375,8 +1375,8 @@ public class Transport {
 
     //SLRV C
     public static Rollingstock SLRVC() {
-        return new Rollingstock("SLRVC", "America", "1996-Present", "",
-                "", type, " Passenger", 50f, 116f, false, true, 0);
+        return new Rollingstock("SLRVC", "US", "1996-Present", "",
+                "", type, " Light Rail", 50f, 116f, false, true, 0);
     }
 
     //Budd Bilevel
