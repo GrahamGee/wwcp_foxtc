@@ -66,9 +66,15 @@ public class RecipesRegisterRollingStock extends AbstractRecipeHandler
             }
 
             for (ItemStack dye : dyeWhite) {//PS2Early3Bay
-                betterAddRecipe(4, new ItemStack(ItemIDs.freightCarRibbing.item, 4),null, null, dye,
+                betterAddRecipe(2, new ItemStack(ItemIDs.freightCarRibbing.item, 4),null, null, dye,
                         new ItemStack(Blocks.chest, 1), new ItemStack(ItemIDs.hopperBay.item, 3), null,
                         new ItemStack(ItemIDs.freightCarTruck.item, 2), new ItemStack(ItemIDs.steelframe.item, 2), new ItemStack(itemSteel, 2, itemDamageSteel), new ItemStack(WWCPItems.PS2Early3Bay.item), 1);
+            }
+
+            for (ItemStack dye : dyeYellow) {//SLRVC
+                betterAddRecipe(3, null, null, null, dye,
+                        null, new ItemStack(ItemIDs.transformer.item, 1), new ItemStack(ItemIDs.copperWireFine.item, 1),
+                        new ItemStack(ItemIDs.ironBogie.item, 2), new ItemStack(ItemIDs.steelframe.item, 1), new ItemStack(itemSteel, 2, itemDamageSteel), new ItemStack(WWCPItems.SLRVC.item), 1);
             }
 
         }

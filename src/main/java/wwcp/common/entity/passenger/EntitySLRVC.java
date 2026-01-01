@@ -1,60 +1,56 @@
-package wwcp.common.entity.locomotives.electrics;
+package wwcp.common.entity.passenger;
 
 import net.minecraft.entity.item.EntityMinecart;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import train.client.render.register.TrainRenderRecord;
 import train.common.Traincraft;
-import train.common.api.ElectricTrain;
+import train.common.api.AbstractPassengerCar;
 import train.common.core.util.TraincraftUtil;
-import train.common.library.EnumSounds;
-import train.common.library.sounds.SoundRecord;
-import wwcp.client.render.rollingstock.locomotives.electrics.ES2;
-import wwcp.client.render.rollingstock.locomotives.electrics.SLRV;
+import wwcp.client.render.rollingstock.passengerStock.SLRVC;
 import wwcp.common.core.handler.Transport;
 
-public class EntitySLRV extends ElectricTrain {
+public class EntitySLRVC extends AbstractPassengerCar {
 
-    public EntitySLRV(World world) {
-        super(world);    
-        InsertTexture(0, "Standard Yellow B Car");
-        InsertTexture(1, "Standard Yellow A Car");
+    public EntitySLRVC(World world) {
+        super(world);
+        InsertTexture(0, "SLRV C Yellow");
     }
-    
+
     public void updateRiderPosition() {
-        TraincraftUtil.updateRider(this, 5.05f, -0.25f, 0.0f);
+        TraincraftUtil.updateRider(this, 0.8f, -0.1f, 0f);
     }
 
     public float getOptimalDistance(EntityMinecart cart) {
-        return 0.0F;
+        return 2.2F;
     }
 
     @Override
     public String transportCountry() {
-        return Transport.SLRV().country;
+        return Transport.SLRVC().country;
     }
 
     @Override
     public String transportYear() {
-        return Transport.SLRV().year;
+        return Transport.SLRVC().year;
     }
 
     public String getInventoryName() {
-        return Transport.SLRV().name;
+        return Transport.SLRVC().name;
     }
 
     @Override
     public boolean isFictional() {
-        return Transport.SLRV().fictional;
+        return Transport.SLRVC().fictional;
     }
 
     @Override
     public void onRenderInsertRecord() {
         Traincraft.traincraftRegistry.RegisterRollingStockModel(
                 new TrainRenderRecord(wwcp.common.library.Info.modID,
-                        EntitySLRV.class, new SLRV(),
-                        "SLRV",
-                        new float[]{-2.85f, 0.15F, 0.0F},
+                        EntitySLRVC.class, new SLRVC(),
+                        "SLRVC",
+                        new float[]{0f, 0.15F, 0.0F},
                         new float[]{0F, 180F, 180F},
                         null) {
                     @Override
@@ -62,10 +58,7 @@ public class EntitySLRV extends ElectricTrain {
                         String texturePath = "";
                         switch (colorAsString.toLowerCase()) {
                             case "black":
-                                texturePath = "textures/locomotive/Electric/SLRV/SLRV_B_DART";
-                                break;
-                            case "red":
-                                texturePath = "textures/locomotive/Electric/SLRV/SLRV_A_DART";
+                                texturePath = "textures/locomotive/Electric/SLRV/SLRV_C_DART";
                                 break;
                         }
                         texturePath += ".png";
@@ -73,10 +66,5 @@ public class EntitySLRV extends ElectricTrain {
                         return new ResourceLocation(wwcp.common.library.Info.modID, texturePath);
                     }
                 });
-    }
-
-    @Override
-    public SoundRecord getSoundRecord() {
-        return EnumSounds.locoElectricBR185;
     }
 }

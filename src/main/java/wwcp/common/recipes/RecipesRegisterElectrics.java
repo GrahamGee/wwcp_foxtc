@@ -45,7 +45,7 @@ public class RecipesRegisterElectrics extends AbstractRecipeHandler
                         new ItemStack(ItemIDs.ironBogie.item, 9), new ItemStack(ItemIDs.steelframe.item, 2), new ItemStack(itemSteel, 5, itemDamageSteel), new ItemStack(WWCPItems.EP2.item), 1);
             }
             for (ItemStack dye : dyeYellow) {//SLRV
-                betterAddRecipe(3, new ItemStack(ItemIDs.steelcab.item, 1), new ItemStack(ItemIDs.pantograph.item, 1), new ItemStack(ItemIDs.partComponentGE.item, 1), dye,
+                betterAddRecipe(3, new ItemStack(ItemIDs.steelcab.item, 1), new ItemStack(ItemIDs.pantograph.item, 1), null, dye,
                         new ItemStack(ItemIDs.controls.item, 1), new ItemStack(ItemIDs.transformer.item, 2), new ItemStack(ItemIDs.copperWireFine.item, 3),
                         new ItemStack(ItemIDs.ironBogie.item, 4), new ItemStack(ItemIDs.steelframe.item, 1), new ItemStack(itemSteel, 4, itemDamageSteel), new ItemStack(WWCPItems.SLRV.item), 1);
             }
